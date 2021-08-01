@@ -1,0 +1,9 @@
+[submodule "miaaim/hdiprep"]
+	path = miaaim/hdiprep
+	url = https://github.com/JoshuaHess12/hdi-prep.git
+[submodule "miaaim/hdireg"]
+	path = miaaim/hdireg
+	url = https://github.com/JoshuaHess12/hdi-reg.git
+[submodule "miaaim/patchmap"]
+	path = miaaim/patchmap
+	url = https://github.com/JoshuaHess12/patchmap.git
