@@ -1,4 +1,4 @@
-# MIAAIM: multi-modal image alignment and analysis by information manifolds
+# MIAAIM: multi-omics image alignment and analysis by information manifolds
 MIAAIM is a software to align multiple-omics tissue imaging data. The worflow includes high-dimensional image compression, registration, and transforming images to align in the same spatial domain. MIAAIM was developed at the [Vaccine and Immunotherapy Center at MGH](http://advancingcures.org) in the labs of [Dr. Patrick Reeves](http://advancingcures.org/reeves-lab/) and [Dr. Ruxandra Sîrbulescu](http://advancingcures.org/sirbulescu-lab/).
 
 For further documentation on the MIAAIM Python impementation, please visit [miaaim.org](http://miaaim.org).
