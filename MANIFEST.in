@@ -1,0 +1,7 @@
+include Dockerfile
+include LICENSE
+recursive-include miaaim *.dockerignore
+recursive-include miaaim *.jpeg
+recursive-include miaaim *.md
+recursive-include miaaim *.py
+recursive-include miaaim *.yml

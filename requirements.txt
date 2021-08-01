@@ -1,0 +1,147 @@
+alabaster==0.7.12
+appdirs==1.4.4
+appnope==0.1.2
+arrow==1.1.1
+attrs==21.2.0
+Babel==2.9.1
+backcall==0.2.0
+binaryornot==0.4.4
+bleach==3.3.0
+brotlipy==0.7.0
+build==0.3.1.post1
+cachey==0.2.1
+certifi==2020.12.5
+cffi @ file:///opt/concourse/worker/volumes/live/092108ac-8b92-48c5-7fc3-5a3c69ebec9c/volume/cffi_1606255115334/work
+chardet @ file:///opt/concourse/worker/volumes/live/f132e510-fec1-466b-4f16-a7f4b77cbda7/volume/chardet_1605303200812/work
+check-manifest==0.46
+click==8.0.1
+cloudpickle==1.6.0
+colorama==0.4.4
+conda==4.9.2
+conda-package-handling @ file:///opt/concourse/worker/volumes/live/d336b342-98ae-40e9-7942-9ed67e52b303/volume/conda-package-handling_1605484843440/work
+cookiecutter==1.7.3
+cryptography @ file:///opt/concourse/worker/volumes/live/f99edcba-5ff4-4190-7603-497e6dd2a160/volume/cryptography_1607636747589/work
+cycler==0.10.0
+dask==2021.4.1
+decorator==4.4.2
+docstring-parser==0.7.3
+docutils==0.16
+elastix-napari==0.1.3
+freetype-py==2.2.0
+fsspec==2021.4.0
+future==0.18.2
+h5py==3.2.1
+# Editable install with no version control (hdi-utils==0.0.3.1)
+-e /opt/miniconda3/lib/python3.9/site-packages
+HeapDict==1.0.1
+idna @ file:///tmp/build/80754af9/idna_1593446292537/work
+imageio==2.9.0
+imagesize==1.2.0
+importlib-metadata==4.0.1
+ipykernel==5.5.4
+ipython==7.23.1
+ipython-genutils==0.2.0
+itk==5.2.0.post2
+itk-core==5.2.0.post2
+itk-elastix==0.12.0
+itk-filtering==5.2.0.post2
+itk-io==5.2.0.post2
+itk-numerics==5.2.0.post2
+itk-registration==5.2.0.post2
+itk-segmentation==5.2.0.post2
+jedi==0.18.0
+Jinja2==2.11.3
+jinja2-time==0.2.0
+joblib==1.0.1
+jsonschema==3.2.0
+jupyter-client==6.1.12
+jupyter-core==4.7.1
+keyring==23.0.1
+kiwisolver==1.3.1
+llvmlite==0.36.0
+locket==0.2.1
+magicgui==0.2.9
+MarkupSafe==1.1.1
+matplotlib==3.4.1
+matplotlib-inline==0.1.2
+-e git+https://github.com/JoshuaHess12/miaaim-python.git@d4828c3db5e8bf120c0b5be5fb6ec46bf87ed543#egg=miaaim_python
+napari==0.4.7
+napari-console==0.0.3
+napari-plugin-engine==0.1.9
+napari-svg==0.1.5
+networkx==2.5.1
+nibabel==3.2.1
+numba==0.53.1
+numpy==1.20.2
+numpydoc==1.1.0
+packaging==20.9
+pandas==1.2.4
+parso==0.8.2
+partd==1.2.0
+pathlib==1.0.1
+pep517==0.10.0
+pexpect==4.8.0
+pickleshare==0.7.5
+Pillow==8.2.0
+pkginfo==1.7.0
+poyo==0.5.0
+prompt-toolkit==3.0.18
+psutil==5.8.0
+ptyprocess==0.7.0
+pycosat==0.6.3
+pycparser @ file:///tmp/build/80754af9/pycparser_1594388511720/work
+pydantic==1.8.1
+Pygments==2.8.1
+pyimzML==1.4.1
+pynndescent==0.5.2
+PyOpenGL==3.1.5
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1606517880428/work
+pyparsing==2.4.7
+pyrsistent==0.17.3
+PySocks @ file:///opt/concourse/worker/volumes/live/112288ac-9cb0-4e73-768b-13baf4ca6419/volume/pysocks_1605305820043/work
+python-dateutil==2.8.1
+python-slugify==5.0.2
+pytz==2021.1
+PyWavelets==1.1.1
+PyYAML==5.4.1
+pyzmq==22.0.3
+qtconsole==5.1.0
+QtPy==1.9.0
+readme-renderer==29.0
+requests @ file:///tmp/build/80754af9/requests_1606691187061/work
+requests-toolbelt==0.9.1
+rfc3986==1.4.0
+ruamel-yaml-conda @ file:///opt/concourse/worker/volumes/live/db92ee5f-7b08-41ef-4212-ab211f4a75b8/volume/ruamel_yaml_1605527312617/work
+scikit-image==0.18.1
+scikit-learn==0.24.1
+scipy==1.6.2
+seaborn==0.11.1
+six @ file:///opt/concourse/worker/volumes/live/34b5b2b5-c9cb-44fb-4b8e-8a9a881bfa35/volume/six_1605205329242/work
+snowballstemmer==2.1.0
+Sphinx @ file:///Users/joshuahess/sphinx
+sphinx-rtd-theme==0.5.2
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+text-unidecode==1.3
+threadpoolctl==2.1.0
+tifffile==2021.4.8
+toml==0.10.2
+toolz==0.11.1
+tornado==6.1
+tqdm @ file:///tmp/build/80754af9/tqdm_1607369919789/work
+traitlets==5.0.5
+twine==3.4.1
+typing-extensions==3.10.0.0
+umap-learn==0.5.1
+uncertainties==3.1.5
+urllib3 @ file:///tmp/build/80754af9/urllib3_1603305693037/work
+vispy==0.6.6
+wcwidth==0.2.5
+webencodings==0.5.1
+wheezy.template==3.1.0
+wrapt==1.12.1
+zipp==3.4.1
