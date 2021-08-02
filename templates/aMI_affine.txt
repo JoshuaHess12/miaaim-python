@@ -1,0 +1,111 @@
+// ********** Image Types **********
+
+// nifti files stored as float in MIAAIM
+(FixedInternalImagePixelType "float")
+(MovingInternalImagePixelType "float")
+
+// two-dimensional spatial images are supported in MIAAIM
+(FixedImageDimension 2)
+(MovingImageDimension 2)
+
+// use automatic direction cosines to initialize
+(UseDirectionCosines "true")
+(AutomaticTransformInitialization "true") 
+
+// ********** Components **********
+
+// set metric as alpha-MI for multichannel images using below command
+(Registration "MultiResolutionRegistrationWithFeatures")
+
+// set the multi-resolution pyramid (must copy number of arguments to equal
+// image dimensionality)
+(FixedImagePyramid "FixedSmoothingImagePyramid" "FixedSmoothingImagePyramid")
+(MovingImagePyramid "MovingSmoothingImagePyramid" "MovingSmoothingImagePyramid")
+
+// set interpolator to use (copy arguments to equal number of moving
+// image channels
+(Interpolator "BSplineInterpolator" "BSplineInterpolator")
+
+// set metric as alpha MI
+(Metric "KNNGraphAlphaMutualInformation")
+
+// set resampling interpolator
+(ResampleInterpolator "FinalBSplineInterpolator")
+(Resampler "DefaultResampler")
+
+// set transformation model
+(Transform "AffineTransform")
+
+
+// ********** Multi-resolution Pyramid **********
+
+// Total number of resolutions
+(NumberOfResolutions 4)
+(FixedImageBSplineInterpolatorOrder 1)
+
+
+// ********** Transform **********
+// how to combine multiple transformation models
+(HowToCombineTransforms "Compose")
+
+
+// ********** Optimizer **********
+
+// set optimization model
+(Optimizer "AdaptiveStochasticGradientDescent")
+(AutomaticParameterEstimation "true")
+
+// Maximum number of iterations in each resolution level
+
+// set number of optimization iterations
+(MaximumNumberOfIterations 1000)
+
+// ********** Metric **********
+
+// set metrics and KNN parameters
+(Alpha 0.99)
+(AvoidDivisionBy 0.0000000001)
+(TreeType "KDTree")
+(BucketSize 50)
+(SplittingRule "ANN_KD_STD")
+(ShrinkingRule "ANN_BD_SIMPLE")
+(TreeSearchType "Standard")
+(KNearestNeighbours 15)
+(ErrorBound 0.0)
+
+
+// ********** Arguments for Output **********
+
+// do not write all iteration and optimization results
+// unless necessary
+(WriteTransformParametersEachIteration "false")
+(WriteTransformParametersEachResolution "false")
+(WriteResultImageAfterEachResolution "false")
+
+// write result image for visualizing results
+(WriteResultImage "true")
+(CompressResultImage "false")
+(ResultImagePixelType "double")
+(ResultImageFormat "nii")
+(ShowExactMetricValue "false")
+//(ErodeMask "true")
+
+
+// ********** ImageSampler **********
+
+// spatial samples used to compute mutual information in each resolution level
+(ImageSampler "MultiInputRandomCoordinate")
+(NumberOfSpatialSamples 1000)
+(NewSamplesEveryIteration "true")
+
+// ********** Interpolator and Resampler **********
+
+//Order of B-Spline interpolation used in each resolution level
+(BSplineInterpolationOrder 1)
+
+//Order of B-Spline interpolation used for applying the final deformation
+(FinalBSplineInterpolationOrder 3)
+
+//Default pixel value for pixels that come from outside the image
+(DefaultPixelValue 0)
+

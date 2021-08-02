@@ -43,21 +43,16 @@ utils
 Tissue State Modeling (PatchMAP)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-..
-   currentmodule:: patchmap.patchmap_
+.. currentmodule:: patchmap.patchmap_
 
-..
-   autofunction:: compute_cobordism
+.. autofunction:: compute_cobordism
 
-..
-   autofunction:: embed_cobordism
+.. autofunction:: embed_cobordism
 
 
 Cross-System/Tissue Information Transfer (i-PatchMAP)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-..
-   autofunction:: compute_i_patchmap_cobordism
+.. autofunction:: compute_i_patchmap_cobordism
 
-..
-   autofunction:: i_patchmap
+.. autofunction:: i_patchmap

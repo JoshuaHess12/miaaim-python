@@ -1,0 +1,63 @@
+// **************** ImageTypes **************************
+(FixedInternalImagePixelType "float")
+(FixedImageDimension 2)
+(MovingImagePixelType  "float")
+(MovingImageDimension 2)
+(UseDirectionCosines "true")
+
+// **************** Main Components **************************
+(Registration "MultiResolutionRegistration")
+//(Metric "AdvancedMeanSquares")
+(Metric "AdvancedMattesMutualInformation")
+//(ImageSampler "Random") 
+(ImageSampler "RandomCoordinate")
+(Interpolator "BSplineInterpolator")
+(ResampleInterpolator "FinalBSplineInterpolator")
+(Resampler "DefaultResampler")
+(Transform "AffineTransform")
+//(Transform "SimilarityTransform")
+(Optimizer "AdaptiveStochasticGradientDescent")
+(FixedImagePyramid "FixedSmoothingImagePyramid")  
+(MovingImagePyramid "MovingSmoothingImagePyramid")
+
+
+// ***************** Transformation **************************
+( AutomaticScalesEstimation "true" ) 
+(AutomaticTransformInitialization "true") 
+(HowToCombineTransforms "Compose")
+
+// ******************* Optimization **************************
+(MaximumNumberOfIterations 50)
+(AutomaticParameterEstimation "true")
+//(MaximumStepLength 1.0)
+
+
+// ******************** Multiresolution **********************
+(NumberOfResolutions 1)
+
+
+// ************************ Metric **************************
+//(UseComplement "false")
+//(ForeGroundvalue 255)
+(NumberOfHistogramBins 64)
+(ShowExactMetricValue "false")
+(ExactMetricEveryXIterations 1000)
+
+
+
+// ************************ Image Sampler *******************
+(NumberOfSpatialSamples 50)
+(NewSamplesEveryIteration "true")
+
+// ************* Interpolation and Resampling ****************
+(BSplineInterpolationOrder 1)
+(FinalBSplineInterpolationOrder 3)
+(DefaultPixelValue 0)
+
+(WriteResultImage "true")
+
+// The pixel type and format of the resulting deformed moving image
+(ResultImagePixelType "double")
+(ResultImageFormat "nii")
+
+
