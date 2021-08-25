@@ -65,6 +65,7 @@ MIAAIM: multi-modal image alignment and analysis by information manifolds
 
    python
    python-workflows
+   jupyter
    api
 
 .. toctree::

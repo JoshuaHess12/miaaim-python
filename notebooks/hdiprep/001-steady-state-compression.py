@@ -9,6 +9,10 @@ from miaaim.hdiprep.HDIprep import hdi_prep
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import minmax_scale
 import matplotlib.patches as mpatches
+import os
+
+import sys
+sys.version
 
 # create function for easy plotting
 def plot_rgb_2D(
@@ -92,7 +96,7 @@ mov_dat.ExportNifti1(
 
 # load the exported image and view
 exported = hdi_reader.HDIreader(
-                    path_to_data="/Users/joshuahess/Desktop/prostate_processed.nii",
+                    path_to_data="/Users/joshuahess/Desktop/moving_processed.nii",
                     path_to_markers=None,
                     flatten=False,
                     subsample=None,
