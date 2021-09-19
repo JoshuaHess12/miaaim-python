@@ -1,3 +1,5 @@
+.. _Configs to Configs:
+
 Configuration
 =============
 MIAAIM utilizes software containers for individual processes within its Nextflow

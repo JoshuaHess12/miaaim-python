@@ -77,7 +77,7 @@ html_theme_options = {
 html_context = {
   'display_github': True,
   'github_user': 'JoshuaHess12',
-  'github_repo': 'hdi-reg',
+  'github_repo': 'miaaim',
   'github_version': '0.0.1',
 }
 

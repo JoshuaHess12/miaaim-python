@@ -16,7 +16,7 @@ Steady-state UMAP compression
 -----------------------------
 Here, we will run through an example of using the HDIprep workflow in MIAAIM
 to create steady-state UMAP embeddings of a high-dimensional image data set. We
-will be using the mass spectrometry imaging data from prototype-001:
+will be using the mass spectrometry imaging data from :code:`prototype-001`:
 
 1. First import the necessary modules. We will also define a helper function
    to create plots after UMAP embedding.
@@ -166,7 +166,7 @@ Histological Image Processing
 -----------------------------
 Here we will demonstrate an example of running histology image processing on the
 H&E imaging modality. We will be using the prostate H&E imaging data from
-prototype-001 in the MIAAIM software.
+:code:`prototype-001` in the MIAAIM software.
 
 1. First import the necessary modules.
 
@@ -355,9 +355,302 @@ view the results:
 
 Image Registration (HDIreg)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The HDIreg workflow in Python is split into two modules, just as it is in
+Nextflow -- the :code:`elastix` and :code:`transformix` workflows. Here, we will
+show both of them on the same data -- :code:`prototype-001`.
+
+elastix
+-------
+
+1. First import the necessary modules.
+
+.. code-block:: python3
+
+   # import hdi utils module
+   import hdiutils.HDIimport.hdi_reader as hdi_reader
+   # import elastix and transformix modules
+   from miaaim.hdiprep.HDIprep import hdi_prep
+   from miaaim.hdireg.HDIreg import elastix
+   from miaaim.hdireg.HDIreg import transformix
+   # import external modules
+   import matplotlib.pyplot as plt
+   import os
+
+2. Now we will set the path to our processed imaging data and the output folder,
+and we will read in the imaging data set using the :code:`HDIreader` class from
+the :code:`hdi-utils` python package. We will then create a dataset using the
+:code:`HDIprep` module imported above. We will set the path to both the fixed
+image (the H&E modality) and a moving image (the steady-state UMAP compressed image).
+
+.. note::
+
+   You do not need to import these modules to run :code:`elastix` and
+   :code:`transformix` from the :code:`hdi-reg` module. We are importing them
+   so that we can easily plot the results of the registration process.
+
+.. code-block:: python3
+
+   # set the path to the processed imaging data from hdiprep modules
+   path_to_fixed = r"D:\Josh_Hess\prototype-001\notebook-output\fixed_processed.nii"
+   path_to_moving = r"D:\Josh_Hess\prototype-001\notebook-output\moving_processed.nii"
+   # set the path to the output directory
+   out_dir = r"D:\Josh_Hess\prototype-001\notebook-output"
+
+   # read data with HDIutils
+   fix_im = hdi_reader.HDIreader(
+                       path_to_data=path_to_fixed,
+                       path_to_markers=None,
+                       flatten=False,
+                       subsample=None,
+                       mask=False,
+                       save_mem=False
+                       )
+   # create data set using HDIprep module
+   fix_dat = hdi_prep.IntraModalityDataset([fix_im])
+   # for plotting purposes, extract the key of the data set
+   fix_key = list(fix_dat.set_dict.keys())[0]
+
+   # read data with HDIutils
+   mov_im = hdi_reader.HDIreader(
+                       path_to_data=path_to_moving,
+                       path_to_markers=None,
+                       flatten=False,
+                       subsample=None,
+                       mask=False,
+                       save_mem=False
+                       )
+   # create data set using HDIprep module
+   mov_dat = hdi_prep.IntraModalityDataset([mov_im])
+   # for plotting purposes, extract the key of the data set
+   mov_key = list(mov_dat.set_dict.keys())[0]
+
+   # plot the histology image
+   plt.imshow(fix_dat.set_dict[fix_key].hdi.data.image)
+
+.. image:: images/histology-prototype-001-1-padded-final.jpeg
+
+.. code-block:: python3
+
+   # plot the moving steady state UMAP compressed image (note that we are only showing
+   # the first three channels in RGB space)
+   plt.imshow(mov_dat.set_dict[mov_key].hdi.data.image[:,:,:3])
+
+.. image:: images/steady-state-UMAP-prototype-001-spatial-resize.jpeg
+
+3. Next, we will register these two images using the :code:`HDIreg` workflow
+and the manifold alignment scheme. We will do this by first registering the
+images using an affine transformation, and then the images will be registered
+nonlinearly. These are indicated in the input folder of :code:`prototype-001`
+by the :code:`affine.txt` and :code:`nonlinear.txt` parameter files.
+
+First, we set the paths to our parameter files and create a list from the two.
+
+.. note::
+
+   Elastix uses file paths as input rather than any objects from the :code:`HDIprep`
+   module.
+
+.. code-block:: python3
+
+   # set path to affine registration parameters
+   affine_pars = r"D:\Josh_Hess\prototype-001\input\affine_short.txt"
+   # set path to affine registration parameters
+   nonlinear_pars = r"D:\Josh_Hess\prototype-001\input\nonlinear_short.txt"
+   # concatenate the two parameter files to a list
+   p = [affine_pars, nonlinear_pars]
+
+4. Now we can register the images using the :code:`elastix` module.
+
+.. note::
+
+   There are two pairs of elastix registration parameter files in the
+   :code:`input` folder for :code:`prototype-001`. Here we use the shorter
+   version for registration. The original version took ~1 hour to complete.
+   The short version took ~40min using this dataset. If you are not using a
+   machine with a lot of computing power, consider using the short version,
+   as shown here. The short version was created by changing the number of
+   resolutions and the number of spatial samples in the registration parameter files.
+
+.. code-block:: python3
+
+   # run the registration
+   elastix.Elastix(path_to_fixed,
+                   path_to_moving,
+                   out_dir,
+                   p,
+                   fp=None,
+                   mp=None,
+                   fMask=None
+                   )
+
+In the nonlinear parameter file, :code:`nonlinear.txt`, we chose to export a r
+esulting image from elastix after registration using the :code:`WriteResultImage`
+option. The output of this registration will be labelled with the suffix :code:`.1`
+since it is the second registration (the first registration would have
+exported an image with the :code:`.0` suffix).
+
+5. We can check the registration results by loading the images into ImageJ/FIJI.
+Here we exported an overlay of one of the H&E images and the resulting image from elastix.
+We saved the file as :code:`elastix-fiji-stack.tif`. The cyan channel is the
+H&E modality, and the magenta channel is a channel from the MSI steady state compressed image.
+
+.. note::
+
+   Elastix will only export the first channel if you using the
+   :code:`WriteResultImage` option. The full image stack can be exported using
+   transformix, which we will show in a moment.
+
+.. code-block:: python3
+
+   # set path to output image
+   result_path = r"D:\Josh_Hess\prototype-001\notebook-output\elastix-fiji-stack.tif"
+   # read the output image stack for registration results
+   result = hdi_reader.HDIreader(
+                       path_to_data=result_path,
+                       path_to_markers=None,
+                       flatten=False,
+                       subsample=None,
+                       mask=False,
+                       save_mem=False
+                       )
+   # create data set using HDIprep module
+   result_dat = hdi_prep.IntraModalityDataset([result])
+   # for plotting purposes, extract the key of the data set
+   result_key = list(result_dat.set_dict.keys())[0]
+
+   # plot the histology image
+   plt.imshow(result_dat.set_dict[result_key].hdi.data.image)
+
+.. image:: images/elastix-fiji-stack.jpg
+
+transformix
+-----------
+6. Now, we can transform the original moving image using the elastix registration
+transform parameters. These are stored as :code:`TransformParameters.0.txt`
+and :code:`TransformParameters.1.txt`, again numbered according to the
+registration used (affine vs. nonlinear).
+
+We set the path to the image registration parameters, the original moving image,
+and we set the pad width and target image size that were used during the :code:`HDIprep`
+module (see notebook 001). All padding and image resizing is carried out on a
+per channel basis in :code:`Transformix`.
+
+.. note::
+
+   Note that running transformix on prototype-001 took ~8min on this machine,
+   transformix 191 channels from the MSI data. The resulting file,
+   :code:`moving_result.nii`, is stored here as a :code:`.nii` stack, and is ~5.86 GB.
+
+.. code-block:: python3
+
+   # set path to moving image
+   in_im = r"D:\Josh_Hess\prototype-001\input\moving"
+   # set path to output transform parameter files
+   tps = [r"D:\Josh_Hess\prototype-001\notebook-output\TransformParameters.0.txt",
+           r"D:\Josh_Hess\prototype-001\notebook-output\TransformParameters.1.txt"]
+   # set target size and padding (see notebook 001 for details)
+   target_size = (2472,1572)
+   pad = (20,20)
+
+   # transform the set of MSI data
+   transformix.Transformix(in_im,
+                           out_dir,
+                           tps,
+                           target_size,
+                           pad,
+                           trim = None,
+                           crops = None,
+                           out_ext = ".nii"
+                           )
 
 Tissue State Modeling (PatchMAP)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Here, we will show how to stitch together data by demonstrating cobordism learning
+in the PatchMAP workflow with the digits dataset.
+
+1. First import the necessary modules.
+
+.. code-block:: python3
+
+   # import patchmap module
+   from miaaim.patchmap import patchmap_
+   from miaaim.patchmap import utils
+   # import external modules
+   import scipy.sparse
+   from sklearn.datasets import load_digits
+   import matplotlib
+   import pandas as pd
+   import numpy as np
+   import matplotlib.pyplot as plt
+   import os
+
+2. Now we will we will read in the example data from the digits dataset.
+We will then cut each individual digit into its own data frame to feed as input
+to the   :code:`compute_cobordism` function of the :code:`patchmap` workflow.
+
+.. code-block:: python3
+
+   # Load digits data
+   digits = load_digits()
+   dat = pd.DataFrame(digits['data'])
+   # Get the factor manifold IDs
+   nms = pd.DataFrame(digits['target'],columns=["target"])
+   # Create a combined data frame with names and data
+   dat_pd = pd.concat([dat,nms],axis=1)
+
+   # Create a list to store all digits in
+   digits_pd_list = []
+   digits_np_list = []
+   # Iterate through digits and create datafames for stitiching
+   for i in range(0,10):
+       # Hold out digit i
+       tmp = dat_pd.loc[dat_pd["target"]==i]
+       # Update the pandas list
+       digits_pd_list.append(tmp)
+       # Update the numpy list
+       digits_np_list.append(tmp.iloc[:,:64].values)
+
+   # Concatenate the lists
+   pandas_digits = pd.concat(digits_pd_list)
+   np_digits = np.vstack(digits_np_list)
+   # Create a colormap for the chosen labels
+   cmap = utils.discrete_cmap(len(pandas_digits['target'].unique()), 'tab20_r')
+   # Create colors
+   colors = [cmap(i) for i in pandas_digits['target']]
+
+3. Now use the :code:`compute_cobordism` function to create a higher-dimensional manifold
+that models similarity between each of the digits in the dataset.
+
+.. code-block:: python3
+
+   # set number of nearest neighbors
+   nn = 150
+   # run the simiplicial set patching
+   patched_simplicial_set = patchmap_.compute_cobordism(
+                                       digits_np_list,
+                                       n_neighbors = nn
+                                       )
+
+4. Now embed the cobordism into two-dimensional space for visualization.
+
+.. code-block:: python3
+
+   # embed the data
+   out = patchmap_.embed_cobordism(
+                                   digits_np_list,
+                                   patched_simplicial_set,
+                                   2,
+                                   n_epochs=200,
+                                   random_state=2,
+                                   min_dist = 0.1
+                                   )
+
+   # plot the results of embedded data
+   plt.rcParams['axes.linewidth'] = 1.5
+   fig, ax = plt.subplots(figsize=[6.5, 5.5])
+   im = ax.scatter(out[:,0], out[:,1], c = colors, s=50,cmap=cmap, edgecolor='white',linewidths=0.2)
+
+.. image:: images/patchmap-digits-150nn.jpeg
 
 Cross-System/Tissue Information Transfer (i-PatchMAP)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

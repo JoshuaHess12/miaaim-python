@@ -42,3 +42,20 @@ Image Registration (HDIreg)
      - 001
      - Prostate MALDI-TOF mass spectrometry imaging and H&E imaging (DOI)
      - Multi-modal image registration
+
+Image Registration (HDIreg)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. _JupyterPatchMAP to JupyterPatchMAP:
+.. list-table:: PatchMAP Jupyter Notebooks
+  :widths: 25 25 25 25
+  :header-rows: 1
+
+  * - Workflow
+    - Notebook ID
+    - Data Type (DOI)
+    - Application
+  * - PatchMAP
+    - 001
+    - Scikit-learn digits dataset
+    - Handwritten digit embedding

@@ -265,11 +265,11 @@ HDIreg Implementation Guide
     * - Image Data Type
       - Suggested HDIreg Elastix Text File Contents
     * - Mixed High (>3) and Low (<= 3 channels) Dimensional Images
-      - test
+      - Registration "MultiResolutionRegistrationWithFeatures" Metric "KNNGraphAlphaMutualInformation" ImageSampler "MultiInputRandomCoordinate"
     * - High (>3 channels) Dimensional Images
-      - test
+      - Registration "MultiResolutionRegistrationWithFeatures" Metric "KNNGraphAlphaMutualInformation" ImageSampler "MultiInputRandomCoordinate"
     * - Low (<=3 channels) Dimensional Images
-      - test
+      - Registration "MultiResolutionRegistration" Metric "AdvancedMattesMutualInformation" ImageSampler "RandomCoordinate"
 
 .. _PatchMAP to PatchMAP:
 
@@ -279,7 +279,18 @@ Tissue State Modelling (PatchMAP)
 .. figure:: images/Figure-4-3-panelA.jpg
    :width: 100%
 
+Continuity between tissue state in MIAAIM is performed with the PatchMAP workflow.
+PatchMAP explicitly constructs a manifold that captures structure between data
+manifolds.
+
+PatchMAP is currently implemented in the Python implementation of MIAAIM. See the
+:ref:`Python workflows <Pworkflows to Pworkflows>` for an example use case.
+
 .. _i-PatchMAP to i-PatchMAP:
 
 Cross-System/Tissue Information Transfer (i-PatchMAP)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+i-PatchMAP utilizes the manifold constructed between data
+separate data manifolds in the PatchMAP workflow to transfer information from a
+reference to a query data set.
