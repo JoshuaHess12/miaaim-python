@@ -43,8 +43,8 @@ Image Registration (HDIreg)
      - Prostate MALDI-TOF mass spectrometry imaging and H&E imaging (DOI)
      - Multi-modal image registration
 
-Image Registration (HDIreg)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Tissue State Modelling (PatchMAP)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. _JupyterPatchMAP to JupyterPatchMAP:
 .. list-table:: PatchMAP Jupyter Notebooks
