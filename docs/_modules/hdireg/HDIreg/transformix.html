@@ -1,0 +1,1310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>hdireg.HDIreg.transformix &mdash; miaaim 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: 5DADE2" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> miaaim
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Nextflow User Guide / Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#linux-os-x">Linux / OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installing-miaaim-in-python">Installing MIAAIM in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../quick_start.html#prototype-001">prototype-001</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#download-data">Download Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#image-preprocessing">Image Preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#image-registration">Image Registration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../directory.html">Folder Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#input">input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#hdiprep">hdiprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#hdireg">hdireg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#docs">docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workflows.html">Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#yaml-parameter-file-input-basics">YAML Parameter File Input Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#high-parameter-image-processing">High-Parameter Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#histological-image-processing">Histological Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#hdiprep-implementation-guide">HDIprep Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#hdireg-implementation-guide">HDIreg Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#tissue-state-modelling-patchmap">Tissue State Modelling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parameters.html">Parameter Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#nextflow">Nextflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#hdiprep">HDIprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#hdireg">HDIreg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#docker-singularity-containers">Docker/Singularity Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#resource-allocation">Resource Allocation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration.html#memory">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration.html#cpu">CPU</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#preset-resource-allocation-options">Preset Resource Allocation Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../provenance.html">Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#adding-imaging-modalities">Adding Imaging Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#importing-new-modalities-adding-file-formats">Importing New Modalities / Adding File Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MIAAIM in Python</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../python.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#usage-without-docker-install-with-pip">Usage without Docker / Install with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#reproducibility-with-pip">Reproducibility with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#docker">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#hdi-utility-functions-hdi-utils">HDI Utility Functions (hdi-utils)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python-workflows.html">Workflow Implementations in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#steady-state-umap-compression">Steady-state UMAP compression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#histological-image-processing">Histological Image Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#elastix">elastix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#transformix">transformix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#tissue-state-modeling-patchmap">Tissue State Modeling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jupyter.html">Jupyter Notebook Zoo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#image-registration-hdireg">Image Registration (HDIreg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#id1">Image Registration (HDIreg)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdiprep.HDIprep.hdi_prep">hdi_prep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdiprep.HDIprep.utils">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdireg.HDIreg.elastix">elastix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdireg.HDIreg.transformix">transformix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#id7">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#tissue-state-modeling-patchmap">Tissue State Modeling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Background on MIAAIM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elastix.html">Elastix Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../elastix.html#registration-parameter-files-elastix">Registration Parameter Files (Elastix)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#multi-channel-input">Multi-channel Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#single-channel-input">Single-channel Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#help-the-registration-with-manual-landmarks">Help the Registration with Manual Landmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#outputs">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../elastix.html#applying-transformations-transformix">Applying Transformations (Transformix)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Roadmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">MIAAIM Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../roadmap.html#miaaim-0-0-1">MIAAIM 0.0.1</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#adding-imaging-modalities">Adding Imaging Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#importing-new-modalities-adding-file-formats">Importing New Modalities / Adding File Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">FAQs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs.html">FAQs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contact</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact Information</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Funding</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding.html">Funding</a></li>
+</ul>
+<p class="caption"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acknowledgements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">miaaim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>hdireg.HDIreg.transformix</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for hdireg.HDIreg.transformix</h1><div class="highlight"><pre>
+<span></span><span class="c1">#Image transformation using elastix/transformix</span>
+<span class="c1">#Joshua Hess</span>
+
+<span class="c1">#Import modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">skimage.transform</span> <span class="kn">import</span> <span class="n">resize</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+
+<span class="c1">#Import external modules</span>
+<span class="kn">from</span> <span class="nn">hdiutils.HDIimport</span> <span class="kn">import</span> <span class="n">hdi_reader</span>
+<span class="kn">from</span> <span class="nn">hdiutils.HDIexport</span> <span class="kn">import</span> <span class="n">hdi_exporter</span>
+
+<div class="viewcode-block" id="GetCropCoords"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.transformix.GetCropCoords">[docs]</a><span class="k">def</span> <span class="nf">GetCropCoords</span><span class="p">(</span><span class="n">coords_csv</span><span class="p">,</span> <span class="n">correction</span> <span class="o">=</span> <span class="mi">80</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Read csv file containing coordinates for rectangular crop through</span>
+<span class="sd">	FIJI and return the coordinates as a list.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	coords_csv: string.</span>
+<span class="sd">		Path to csv file containing coordinates.</span>
+
+<span class="sd">	correction: integer (Default: 80)</span>
+<span class="sd">		Extra pixels to take on each side of the crop contour for buffer.</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	list with min row, max row, min col, max col coordinates of bounding box.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="c1">#Ensure that the csv is pathlib object</span>
+	<span class="n">coords_csv</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">coords_csv</span><span class="p">)</span>
+	<span class="c1">#Read the file</span>
+	<span class="n">file_cont</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">coords_csv</span><span class="p">)</span>
+
+	<span class="c1">#Get the XY coordinates from the dataframe</span>
+	<span class="n">col</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">file_cont</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+	<span class="n">row</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">file_cont</span><span class="p">[</span><span class="s1">&#39;Y&#39;</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+	<span class="c1">#Get min and max for rows</span>
+	<span class="n">min_row</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+	<span class="n">max_row</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+	<span class="c1">#Get column min and max</span>
+	<span class="n">min_col</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+	<span class="n">max_col</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+	<span class="c1">#Check to see if we are adding overlap to our ROIs</span>
+	<span class="k">if</span> <span class="n">correction</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="c1">#Get the bounding box</span>
+		<span class="n">min_row</span> <span class="o">=</span> <span class="p">(</span><span class="n">min_row</span><span class="o">-</span><span class="p">(</span><span class="n">correction</span><span class="p">))</span>
+		<span class="n">max_row</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_row</span><span class="o">+</span><span class="p">(</span><span class="n">correction</span><span class="p">))</span>
+		<span class="n">min_col</span> <span class="o">=</span> <span class="p">(</span><span class="n">min_col</span><span class="o">-</span><span class="p">(</span><span class="n">correction</span><span class="p">))</span>
+		<span class="n">max_col</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_col</span><span class="o">+</span><span class="p">(</span><span class="n">correction</span><span class="p">))</span>
+
+	<span class="c1">#Return the contour of the rectangular crop</span>
+	<span class="k">return</span> <span class="p">[</span><span class="n">min_row</span><span class="p">,</span><span class="n">max_row</span><span class="p">,</span><span class="n">min_col</span><span class="p">,</span><span class="n">max_col</span><span class="p">]</span></div>
+
+
+
+<div class="viewcode-block" id="CropROI"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.transformix.CropROI">[docs]</a><span class="k">def</span> <span class="nf">CropROI</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span><span class="n">full_img</span><span class="p">,</span><span class="n">target_size</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Extract region of interest from full image array.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	coords: list</span>
+<span class="sd">		Returned from ``GetCropCoords``</span>
+
+<span class="sd">	full_img: array</span>
+<span class="sd">		Contains the image to be cropped from.</span>
+
+<span class="sd">    target_size: tuple of type integer (sizex,sizey; Default: None)</span>
+<span class="sd">        Resize image using bilinear interpolation before exporting.</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	nifti_ROI: object of class nibabel.Nifti1Image</span>
+<span class="sd">		Returns nibabel nifti object that is the cropped region to be exported.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="c1">#Get region of interest crop from the full array using coorinates</span>
+	<span class="n">tmp_ROI</span> <span class="o">=</span> <span class="n">full_img</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span><span class="nb">int</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">3</span><span class="p">]),</span><span class="nb">int</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span><span class="nb">int</span><span class="p">(</span><span class="n">coords</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+	<span class="c1">#Get the size of the imc image</span>
+    <span class="c1">#multiple = int(imc_im.shape[1]/tmp_ROI.shape[0])</span>
+    <span class="c1">#Use the rounded multiple to resize our ROI for image registration</span>
+    <span class="c1">#HiRes_size = (tmp_ROI.shape[1]*multiple,tmp_ROI.shape[0]*multiple)</span>
+	<span class="c1">#HiRes_size = (imc_im.shape[0],imc_im.shape[1])</span>
+
+	<span class="k">if</span> <span class="n">target_size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="c1">#Remember that cv2 does the axis in the opposite order as numpy</span>
+		<span class="c1"># note here that we are no longer using cv2 -- this is skimage resizing...</span>
+		<span class="n">tmp_ROI</span> <span class="o">=</span> <span class="n">resize</span><span class="p">(</span><span class="n">tmp_ROI</span><span class="p">,</span><span class="n">target_size</span><span class="p">)</span>
+
+	<span class="c1">#Create a nifti object</span>
+	<span class="n">nifti_ROI</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">Nifti1Image</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="n">tmp_ROI</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">affine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+	<span class="c1">#Return image</span>
+	<span class="k">return</span> <span class="n">nifti_ROI</span></div>
+
+
+
+<div class="viewcode-block" id="ExtractROIcrop"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.transformix.ExtractROIcrop">[docs]</a><span class="k">def</span> <span class="nf">ExtractROIcrop</span><span class="p">(</span><span class="n">coords_csv</span><span class="p">,</span> <span class="n">full_img</span><span class="p">,</span> <span class="n">target_size</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">correction</span> <span class="o">=</span> <span class="mi">80</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Combine ``CropROI`` and ``GetCropCoords`` to return</span>
+<span class="sd">	a nifti object available for export.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	coords_csv: string.</span>
+<span class="sd">		Path to csv file containing coordinates.</span>
+
+<span class="sd">	full_img: array</span>
+<span class="sd">		Contains the image to be cropped from.</span>
+
+<span class="sd">    target_size: tuple of type integer (sizex,sizey; Default: None)</span>
+<span class="sd">        Resize image using bilinear interpolation before exporting.</span>
+
+<span class="sd">	correction: integer (Default: 80)</span>
+<span class="sd">		Extra pixels to take on each side of the crop contour for buffer.</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	crop_im: object of class nibabel.Nifti1Image</span>
+<span class="sd">		Returns nibabel nifti object that is the cropped region to be exported.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="c1">#Extract the coordinates from the csv file</span>
+	<span class="n">coords</span> <span class="o">=</span> <span class="n">GetCropCoords</span><span class="p">(</span><span class="n">coords_csv</span><span class="p">,</span> <span class="n">correction</span><span class="p">)</span>
+	<span class="c1">#Extract the nifti cropped region</span>
+	<span class="n">crop_im</span> <span class="o">=</span> <span class="n">CropROI</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span><span class="n">full_img</span><span class="p">,</span><span class="n">target_size</span><span class="p">)</span>
+
+	<span class="c1">#Return the cropped image -- nifti formatted</span>
+	<span class="k">return</span> <span class="n">crop_im</span></div>
+
+
+
+<span class="c1">#Define base component transformix</span>
+<div class="viewcode-block" id="RunTransformix"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.transformix.RunTransformix">[docs]</a><span class="k">def</span> <span class="nf">RunTransformix</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Run the transfomix transformation. You must be able to call transformix</span>
+<span class="sd">	from your command shell to use this. You must also have your transformation</span>
+<span class="sd">	parameter files set before running (see transformix parameter files).</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	command: string</span>
+<span class="sd">		Sent to the system for transformix running (see elastix command line implementation).</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	command: string</span>
+<span class="sd">		Same string as above.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="c1">#Print command</span>
+	<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">command</span><span class="p">))</span>
+	<span class="c1">#Print transformix update</span>
+	<span class="c1">#print(&#39;Running transformix...&#39;)</span>
+	<span class="c1">#Send the command to the shell</span>
+	<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+	<span class="c1">#Print update</span>
+	<span class="c1">#print(&#39;Finished&#39;)</span>
+	<span class="c1">#Return values</span>
+	<span class="k">return</span> <span class="n">command</span></div>
+
+
+<div class="viewcode-block" id="CreateCompositeTransforms"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.transformix.CreateCompositeTransforms">[docs]</a><span class="k">def</span> <span class="nf">CreateCompositeTransforms</span><span class="p">(</span><span class="n">tps</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Apply a series of transformations to an image using transformix. Prior</span>
+<span class="sd">	results show that composing transforms in elastix do not yield the same</span>
+<span class="sd">	result as appying each transformation in series. This will take more time</span>
+<span class="sd">	but will give the expected result. A new copy of transform parameters will</span>
+<span class="sd">	be created and exported to the out_dir</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	tps: list (length number of transformation parameter files)</span>
+<span class="sd">		Path to elastix image registration transform parameter files (in order of application).</span>
+
+<span class="sd">	out_dir: string</span>
+<span class="sd">		Path to output directory for transform parameters and output results.</span>
+
+<span class="sd">	Returns</span>
+<span class="sd">	-------</span>
+<span class="sd">	transform_calls: list</span>
+<span class="sd">		List of transform parameters to insert into the transformix command &quot;--tp&quot;.</span>
+
+<span class="sd">	init_trans_list: list</span>
+<span class="sd">		List of initial transformations in the tranform parameter files. These</span>
+<span class="sd">		are part of the actual transform parameter .txt files.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="c1">#Ensure the input tps are pathlib objects</span>
+	<span class="n">tps</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tps</span><span class="p">]</span>
+	<span class="c1">#Ensure the out directory is a pathlib object</span>
+	<span class="n">out_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+
+	<span class="c1">#Create a list of new filenames that will be exported</span>
+	<span class="n">new_tps</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_dir</span><span class="p">),</span><span class="s2">&quot;TransformParameters_comp.&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.txt&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tps</span><span class="p">))]</span>
+	<span class="c1">#Create a list of items to store for no initial transforms -- these are going</span>
+	<span class="n">init_trans_list</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="c1">#Create a lsit of files that transformix will call on</span>
+	<span class="n">transform_calls</span> <span class="o">=</span> <span class="p">[]</span>
+
+	<span class="c1">#Create a dictionary that stores old tps and new tps</span>
+	<span class="n">tp_dict</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="c1">#Iterate through tps and add to dictionary</span>
+	<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tps</span><span class="p">)):</span>
+		<span class="c1">#Access the old tp name and new, add to the dictionary</span>
+		<span class="n">tp_dict</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">tps</span><span class="p">[</span><span class="n">t</span><span class="p">]:</span><span class="n">new_tps</span><span class="p">[</span><span class="n">t</span><span class="p">]})</span>
+
+	<span class="c1">#Iterate through all other files and change inital transforms</span>
+	<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tps</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+		<span class="c1">#Extract and modify the first file in the list of transform parameters</span>
+		<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">tps</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+			<span class="c1">#Read the file</span>
+			<span class="n">filedata</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+			<span class="c1">#Search for the initial transform parameter</span>
+			<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">filedata</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)):</span>
+				<span class="c1">#Check if inital transform string is in the line</span>
+				<span class="k">if</span> <span class="s2">&quot;InitialTransformParametersFileName&quot;</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+					<span class="c1">#Extract the inital transform parameter string</span>
+					<span class="n">init_trans</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+			<span class="c1">#Update the list of init trans</span>
+			<span class="n">init_trans_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">init_trans</span><span class="p">)</span>
+
+	<span class="c1">#Now iterate through the init trans files and add true or false for whether they are essential (called in transformix)</span>
+	<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">init_trans_list</span><span class="p">[</span><span class="mi">1</span><span class="p">:])):</span>
+		<span class="c1">#Extract the init trans file and the one above -- skip last one -- always used!</span>
+		<span class="k">if</span> <span class="n">init_trans_list</span><span class="p">[</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;NoInitialTransform&#39;</span><span class="p">:</span>
+			<span class="c1">#Update the list at t to be true</span>
+			<span class="n">transform_calls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_tps</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
+
+	<span class="c1">#Add the last transform parameter to the transform call by default</span>
+	<span class="n">transform_calls</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_tps</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">new_tps</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+	<span class="c1">#Iterate through all other files and change inital transforms</span>
+	<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">tps</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+		<span class="c1">#Extract and modify the first file in the list of transform parameters</span>
+		<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">tps</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+			<span class="c1">#Read the file</span>
+			<span class="n">filedata</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+			<span class="c1">#Search for the initial transform parameter</span>
+			<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">filedata</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)):</span>
+				<span class="c1">#Check if inital transform string is in the line</span>
+				<span class="k">if</span> <span class="s2">&quot;InitialTransformParametersFileName&quot;</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+					<span class="c1">#Extract the inital transform parameter string</span>
+					<span class="n">init_trans</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+
+		<span class="c1">#Check to ensure that the initial transform is no initial transform</span>
+		<span class="k">if</span> <span class="n">init_trans</span> <span class="o">!=</span> <span class="s1">&#39;NoInitialTransform&#39;</span><span class="p">:</span>
+			<span class="c1">#Get the corresponding new file name from the old</span>
+			<span class="c1">#n_tp = tp_dict[Path(init_trans)]</span>
+			<span class="n">n_tp</span> <span class="o">=</span> <span class="n">new_tps</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+			<span class="c1">#Then replace the initial transform in the file with the new tp</span>
+			<span class="n">filedata</span> <span class="o">=</span> <span class="n">filedata</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">init_trans</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_tp</span><span class="p">))</span>
+
+		<span class="c1">#Write out the new data to the new transform parameter filename</span>
+		<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">new_tps</span><span class="p">[</span><span class="n">t</span><span class="p">],</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+			<span class="c1">#Write the new file</span>
+			<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">filedata</span><span class="p">)</span>
+
+	<span class="c1">#Remove the filedata for now</span>
+	<span class="n">filedata</span> <span class="o">=</span> <span class="kc">None</span>
+
+	<span class="c1">#Return the list of new parameter files</span>
+	<span class="k">return</span> <span class="n">transform_calls</span><span class="p">,</span><span class="n">init_trans_list</span></div>
+
+
+
+<div class="viewcode-block" id="MultiTransformix"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.transformix.MultiTransformix">[docs]</a><span class="k">def</span> <span class="nf">MultiTransformix</span><span class="p">(</span><span class="n">in_im</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">tps</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;Applies multiple transform files in sequence to an image.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	in_im: string</span>
+<span class="sd">		Input image path.</span>
+
+<span class="sd">	tps: list (length number of transformation parameter files)</span>
+<span class="sd">		Path to elastix image registration transform parameter files (in order of application).</span>
+
+<span class="sd">	out_dir: string</span>
+<span class="sd">		Path to output directory for transform parameters and output results.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="c1">#Ensure the input image is pathlib object</span>
+	<span class="n">in_im</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">in_im</span><span class="p">)</span>
+	<span class="c1">#Ensure the input tps are pathlib objects</span>
+	<span class="n">tps</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tps</span><span class="p">]</span>
+	<span class="c1">#Ensure the out directory is a pathlib object</span>
+	<span class="n">out_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+
+	<span class="c1">#Create transformix command</span>
+	<span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;transformix&quot;</span>
+
+	<span class="c1">#Run the CreateCompositeTransforms(tps, out_dir) function</span>
+	<span class="n">trans_calls</span><span class="p">,</span><span class="n">init_trans_list</span> <span class="o">=</span> <span class="n">CreateCompositeTransforms</span><span class="p">(</span><span class="n">tps</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Created transform parameters length:&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trans_calls</span><span class="p">)))</span>
+
+	<span class="c1">#Create temporary directory in the out_dir</span>
+	<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">out_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">nestdirname</span><span class="p">:</span>
+		<span class="c1">#Run the first transformation</span>
+		<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">command</span> <span class="o">+</span><span class="s1">&#39; -out &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nestdirname</span><span class="p">)</span>
+		<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span> <span class="s1">&#39; -tp &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">trans_calls</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+		<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span> <span class="s1">&#39; -in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">in_im</span><span class="p">)</span>
+
+		<span class="c1">#Iterate through each transform parameter file and run transformix</span>
+		<span class="n">RunTransformix</span><span class="p">(</span><span class="n">tmp_command</span><span class="p">)</span>
+
+		<span class="c1">#rint(&quot;Getting first results&quot;)</span>
+
+		<span class="c1">#Get a result name for the output of transformix (assumes nifti for now)</span>
+		<span class="n">res_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nestdirname</span><span class="p">),</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+
+		<span class="c1">#print(&quot;Got first results&quot;)</span>
+
+		<span class="c1">#Check to see if the list is larger than 2 (if no then only take the last parameter file)</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">trans_calls</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="c1">#Print update</span>
+			<span class="c1">#print(&quot;Number of transform calls:&quot; + str(len(trans_calls)))</span>
+
+			<span class="c1">#Now iterate through all the other transform parameter files and run transformix</span>
+			<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">trans_calls</span><span class="p">)):</span>
+				<span class="c1">#print(&quot;Running transform call:&quot; + str(t))</span>
+
+				<span class="c1">#Create the temporary transformix command</span>
+				<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">command</span>
+
+				<span class="c1">#Check to see if this is the last iteration</span>
+				<span class="k">if</span> <span class="n">t</span> <span class="o">==</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">trans_calls</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+					<span class="c1">#Add the result name</span>
+					<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span> <span class="s1">&#39; -in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">res_name</span><span class="p">)</span>
+					<span class="c1">#Make the output directory the final out_dir</span>
+					<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span><span class="s1">&#39; -out &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+					<span class="c1">#Update result name</span>
+					<span class="n">res_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_dir</span><span class="p">),</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+
+				<span class="c1">#Otherwise, leave it as the tmp directory</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1">#Add the result name to the command</span>
+					<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span> <span class="s1">&#39; -in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">res_name</span><span class="p">)</span>
+					<span class="c1">#Run transformixs</span>
+					<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span><span class="s1">&#39; -out &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">nestdirname</span><span class="p">)</span>
+					<span class="c1">#Get a result name for the output of transformix (assumes nifti for now)</span>
+					<span class="n">res_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nestdirname</span><span class="p">),</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+
+				<span class="c1">#Add the transform parameters</span>
+				<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span> <span class="s1">&#39; -tp &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">trans_calls</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
+				<span class="c1">#Iterate through each transform parameter file and run transformix</span>
+				<span class="n">RunTransformix</span><span class="p">(</span><span class="n">tmp_command</span><span class="p">)</span>
+
+
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1">#Just change the results to the output directory</span>
+			<span class="n">new_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">out_dir</span><span class="p">),</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+			<span class="c1">#Get the resulting image to rename (so we don&#39;t overwrite results)</span>
+			<span class="n">res_name</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">new_name</span><span class="p">)</span>
+			<span class="c1">#Set back the res name</span>
+			<span class="n">res_name</span> <span class="o">=</span> <span class="n">new_name</span>
+
+	<span class="c1">#Return the result name</span>
+	<span class="k">return</span> <span class="n">res_name</span></div>
+
+
+<span class="c1">#Create class structure for transformix implementation</span>
+<div class="viewcode-block" id="Transformix"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.transformix.Transformix">[docs]</a><span class="k">class</span> <span class="nc">Transformix</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;Python implementation of Transformix with automated image pre-processing.</span>
+<span class="sd">	</span>
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	in_im: string</span>
+<span class="sd">		Input image path.</span>
+
+<span class="sd">	out_dir: string</span>
+<span class="sd">		Path to output directory for transform parameters and output results.</span>
+
+<span class="sd">	tps: list (length number of transformation parameter files)</span>
+<span class="sd">		Path to elastix image registration transform parameter files (in order of application).</span>
+
+<span class="sd">    target_size: tuple of type integer (sizex,sizey; Default: None)</span>
+<span class="sd">        Resize image using bilinear interpolation before exporting.</span>
+
+<span class="sd">    pad: tuple of type integer (padx,pady; Default: None)</span>
+<span class="sd">        Indicates height and length padding to add to the image before exporting.</span>
+
+<span class="sd">    trim: tuple of type integer (trimx,trimy; Default: None)</span>
+<span class="sd">        Indicates height and length trimming to remove from the image before exporting.</span>
+
+<span class="sd">	crops: dictionary (Default: None)</span>
+<span class="sd">		Dictionary of dictionaries containing {crop_name(s): {coords_csv: , target_size: , correction: , tp: , fixed_pad: }}.</span>
+<span class="sd">		All arguments for each cropped region (i.e., region of interest) are performed</span>
+<span class="sd">		only on the given crop.</span>
+
+<span class="sd">			* coords_csv: string.</span>
+<span class="sd">				Path to csv file containing coordinates.</span>
+
+<span class="sd">			* target_size: tuple of type integer (sizex,sizey; Default: None)</span>
+<span class="sd">				Resize image using bilinear interpolation before exporting.</span>
+
+<span class="sd">			* correction: integer</span>
+<span class="sd">				Extra pixels to take on each side of the crop contour for buffer.</span>
+
+<span class="sd">			* tp: list (length number of transformation parameter files)</span>
+<span class="sd">				Path to elastix image registration transform parameter files</span>
+<span class="sd">				(in order of application) for this crop.</span>
+
+<span class="sd">		    * fixed_pad: integer</span>
+<span class="sd">				Indicates trim to remove from the cropped image before exporting. This should be the</span>
+<span class="sd">				same value as the amount of padding applied to</span>
+<span class="sd">				the cropped region&#39;s corresponding fixed image that was used for</span>
+<span class="sd">				registration.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_im</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">,</span> <span class="n">tps</span><span class="p">,</span> <span class="n">target_size</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">trim</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">crops</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">out_ext</span> <span class="o">=</span> <span class="s2">&quot;.nii&quot;</span><span class="p">):</span>
+
+		<span class="c1">#Create pathlib objects and set class parameters</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">in_im</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">in_im</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">in_channels</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">multichannel</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tps</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tps</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;transformix&quot;</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">intermediate</span> <span class="o">=</span> <span class="kc">False</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span> <span class="o">=</span> <span class="n">out_ext</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">=</span> <span class="n">target_size</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">pad</span> <span class="o">=</span> <span class="n">pad</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">trim</span> <span class="o">=</span> <span class="n">trim</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">crops</span> <span class="o">=</span> <span class="n">crops</span>
+		<span class="c1"># Check for input list or none</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+			<span class="c1"># convert it to tuple from list (command line parser)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">)</span>
+		<span class="c1"># Check for input list or none</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+			<span class="c1"># convert it to tuple from list (command line parser)</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">pad</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">)</span>
+
+		<span class="c1">#Load images</span>
+		<span class="n">niiIn</span> <span class="o">=</span> <span class="n">hdi_reader</span><span class="o">.</span><span class="n">HDIreader</span><span class="p">(</span>
+		    <span class="n">path_to_data</span><span class="o">=</span><span class="n">in_im</span><span class="p">,</span>
+		    <span class="n">path_to_markers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+		    <span class="n">flatten</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+		    <span class="n">subsample</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+		    <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+		    <span class="n">save_mem</span><span class="o">=</span><span class="kc">False</span>
+		<span class="p">)</span>
+		<span class="c1"># update file information</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">baseName</span> <span class="o">=</span> <span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.ome&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">ext</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">filename</span><span class="o">.</span><span class="n">suffixes</span><span class="p">)</span>
+
+		<span class="c1"># Check for input extension or none</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="o">==</span><span class="kc">None</span><span class="p">:</span>
+			<span class="c1"># convert it to be whatever extension the input image contains as default</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ext</span>
+			<span class="c1"># make sure that the export type is not .imzML for now...</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="o">==</span><span class="s2">&quot;.imzML&quot;</span><span class="p">:</span>
+				<span class="c1"># change to nifti</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="o">=</span><span class="s2">&quot;.nii&quot;</span>
+
+		<span class="c1"># check for number of channels in the image by accessing the class</span>
+		<span class="k">if</span> <span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">num_channels</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="c1"># Update multichannel class option</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">multichannel</span> <span class="o">=</span> <span class="kc">True</span>
+		<span class="c1"># otherwise this is a single channel image</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># multichannel is false</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">multichannel</span> <span class="o">=</span> <span class="kc">False</span>
+
+	    <span class="c1">#Check to see if there is single channel input (grayscale)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">multichannel</span><span class="p">:</span>
+			<span class="c1"># run single channel registration on array</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">_singlechannelTransformixArray</span><span class="p">(</span><span class="n">niiIn</span><span class="p">)</span>
+
+		<span class="c1"># Otherwise there is multichannel input. here we run multichannel registration</span>
+		<span class="c1"># and all operations for preprocessing are performed on a per slice basis to</span>
+		<span class="c1"># save disk space (dont have to export the full z stack at once). For now</span>
+		<span class="c1"># all processing steps are tailored for nifti formats. In the future this</span>
+		<span class="c1"># should easily be changed to allow for any data format</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># print update</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Detected multichannel input&#39;</span><span class="p">)</span>
+			<span class="c1"># Check to see if cropping the resulting image</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">crops</span><span class="o">==</span><span class="kc">None</span><span class="p">:</span>
+				<span class="c1"># check for raster data</span>
+				<span class="k">if</span> <span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hdi_type</span> <span class="o">==</span> <span class="s1">&#39;raster&#39;</span><span class="p">:</span>
+					<span class="c1"># raster transformix</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_multichannelTransformixRaster</span><span class="p">(</span><span class="n">niiIn</span><span class="p">)</span>
+				<span class="c1"># check for image data type</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1"># run multichannel transformix with the array type</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">_multichannelTransformixArray</span><span class="p">(</span><span class="n">niiIn</span><span class="p">)</span>
+
+			<span class="c1"># !!!!!!!!!!!!!!!</span>
+			<span class="c1"># Cropping is true</span>
+			<span class="c1"># for now this is not supported in the nextflow version of miaaim.</span>
+			<span class="c1"># TODO: add this to nextflow. This can be rin python and strings</span>
+			<span class="c1"># together multiple transformations from images and crops within</span>
+			<span class="c1"># those images so that very large arrays do not have to be fully</span>
+			<span class="c1"># exported (e.g. for MSI data that contains thousands of channels</span>
+			<span class="c1"># and low resolution on full tissues)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1">#Read the image</span>
+				<span class="n">niiIn</span> <span class="o">=</span> <span class="n">niiIn</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+
+				<span class="c1">#Create a temporary outer directory</span>
+				<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmphomedir</span><span class="p">:</span>
+
+					<span class="c1">#Create a dictionary to store the temporary folders in</span>
+					<span class="n">tmpfolds</span> <span class="o">=</span> <span class="p">{}</span>
+					<span class="c1">#Create a dictionary to store list of channels in for each roi</span>
+					<span class="n">roi_channels</span> <span class="o">=</span> <span class="p">{}</span>
+					<span class="c1">#Iterate through each crop and create a temporary directory for it</span>
+					<span class="k">for</span> <span class="n">roi</span><span class="p">,</span> <span class="n">pars</span> <span class="ow">in</span> <span class="n">crops</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+						<span class="c1">#Create a temporary directory and reserve the roi name from the crops input</span>
+						<span class="n">tmpfolds</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">roi</span><span class="p">:</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">(</span><span class="nb">dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">)})</span>
+						<span class="c1">#Update the channels dictionary to be empty lists</span>
+						<span class="n">roi_channels</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">roi</span><span class="p">:[]})</span>
+
+					<span class="c1">#Print update on array shape</span>
+					<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Image has &#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="o">+</span><span class="s1">&#39; channels&#39;</span><span class="p">)</span>
+
+					<span class="c1">#Iterate through each channel in the data</span>
+					<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+						<span class="c1">#Print update</span>
+						<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Working on slice &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+						<span class="c1">#print(&quot;Multichannel crop is true&quot;)</span>
+						<span class="c1">#print(&#39;Shape of NiiIn is&#39; +str(niiIn.shape[2]))</span>
+						<span class="c1">#Update the list of names for image channels</span>
+						<span class="c1">#self.in_channels.append(im_name)</span>
+
+						<span class="c1">#create a temporary directory using the context manager for channel-wise images</span>
+						<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">tmphomedir</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmpdirname</span><span class="p">:</span>
+							<span class="c1">#Create a name for a temporary image</span>
+							<span class="n">im_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">stem</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+							<span class="c1">#Check to see if the path exists</span>
+							<span class="k">if</span> <span class="ow">not</span> <span class="n">im_name</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+
+								<span class="c1">#Check to see if there is a target size for the image</span>
+								<span class="k">if</span> <span class="n">target_size</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+									<span class="c1">#print(&quot;Got the resize&quot;)</span>
+									<span class="c1">#Create a nifti image from this slice</span>
+									<span class="n">nii_im</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">Nifti1Image</span><span class="p">(</span><span class="n">resize</span><span class="p">(</span><span class="n">niiIn</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">],</span><span class="n">target_size</span><span class="p">),</span> <span class="n">affine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+									<span class="c1">#print(&quot; resized&quot;)</span>
+								<span class="c1">#No resize</span>
+								<span class="k">else</span><span class="p">:</span>
+									<span class="c1">#Leave the image unchanged</span>
+									<span class="n">nii_im</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">Nifti1Image</span><span class="p">(</span><span class="n">niiIn</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">affine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+								<span class="c1">#Save the nifti image</span>
+								<span class="n">nib</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nii_im</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">im_name</span><span class="p">))</span>
+								<span class="c1">#print(&quot;saved &quot;+ str(im_name))</span>
+								<span class="c1">#Remove the nifti slice to clear memory</span>
+								<span class="n">nii_im</span> <span class="o">=</span> <span class="kc">None</span>
+
+							<span class="c1">#add transform -- check for list size</span>
+							<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+								<span class="c1">#print(&#39;GOt the multi tp input&#39;)</span>
+								<span class="c1">#Run the composition function for transformix</span>
+								<span class="n">res_name</span> <span class="o">=</span> <span class="n">MultiTransformix</span><span class="p">(</span><span class="n">in_im</span> <span class="o">=</span> <span class="n">im_name</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="n">tmpdirname</span><span class="p">,</span> <span class="n">tps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">)</span>
+
+							<span class="k">else</span><span class="p">:</span>
+
+								<span class="c1">#Create a temporary command to be sent to the shell</span>
+								<span class="n">tmp_command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">im_name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; -out &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">)</span>
+								<span class="c1">#Add full tissue transform paramaeters</span>
+								<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span> <span class="s1">&#39; -tp &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+								<span class="c1">#Send the command to the shell</span>
+								<span class="n">RunTransformix</span><span class="p">(</span><span class="n">tmp_command</span><span class="p">)</span>
+
+								<span class="c1">#Get a temporary result name for the output of transformix (assumes nifti for now)</span>
+								<span class="n">res_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+
+							<span class="c1">#Load the resulting transformed image</span>
+							<span class="n">niiResult</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">res_name</span><span class="p">))</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+
+							<span class="c1">#Iterate through each of the crops</span>
+							<span class="k">for</span> <span class="n">roi</span><span class="p">,</span> <span class="n">pars</span> <span class="ow">in</span> <span class="n">crops</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+
+								<span class="c1">#Create a temporary directory to store the</span>
+								<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">tmpdirname</span><span class="p">)</span> <span class="k">as</span> <span class="n">roitmp</span><span class="p">:</span>
+									<span class="c1">#Create a temporary name</span>
+									<span class="n">tmproiname</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">roitmp</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+									<span class="c1">#Extract a temporary crop for this region</span>
+									<span class="n">tmpcrop</span> <span class="o">=</span> <span class="n">ExtractROIcrop</span><span class="p">(</span><span class="n">coords_csv</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;coords_csv&#39;</span><span class="p">],</span><span class="n">full_img</span> <span class="o">=</span> <span class="n">niiResult</span><span class="p">,</span> <span class="n">target_size</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;target_size&#39;</span><span class="p">],</span> <span class="n">correction</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;correction&#39;</span><span class="p">])</span>
+									<span class="c1">#Save this temporary crop to the roi temp directory</span>
+									<span class="n">nib</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">tmpcrop</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">tmproiname</span><span class="p">))</span>
+
+									<span class="c1">#add transform -- check for list size</span>
+									<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pars</span><span class="p">[</span><span class="s1">&#39;tps&#39;</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+										<span class="c1">#Run the composition function for transformix</span>
+										<span class="n">roires_name</span> <span class="o">=</span> <span class="n">MultiTransformix</span><span class="p">(</span><span class="n">in_im</span> <span class="o">=</span> <span class="n">tmproiname</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="n">roitmp</span><span class="p">,</span> <span class="n">tps</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;tps&#39;</span><span class="p">])</span>
+
+									<span class="k">else</span><span class="p">:</span>
+
+										<span class="c1">#Create a temporary command to be sent to the shell -- output directory in the tmp folder created previously</span>
+										<span class="n">roi_command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmproiname</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; -out &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">roitmp</span><span class="p">)</span>
+										<span class="c1">#Add these transform parameters for this roi</span>
+										<span class="n">roi_command</span> <span class="o">=</span> <span class="n">roi_command</span> <span class="o">+</span> <span class="s1">&#39; -tp &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">pars</span><span class="p">[</span><span class="s1">&#39;tp&#39;</span><span class="p">]))</span>
+										<span class="c1">#Send the command to the shell</span>
+										<span class="n">RunTransformix</span><span class="p">(</span><span class="n">roi_command</span><span class="p">)</span>
+
+										<span class="c1">#Get a temporary result name for the output of transformix (assumes nifti for now)</span>
+										<span class="n">roires_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">roitmp</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+
+									<span class="c1">#Create a new name for the roi result</span>
+									<span class="n">roinew_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpfolds</span><span class="p">[</span><span class="n">roi</span><span class="p">],</span><span class="nb">str</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;_result&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+									<span class="c1">#Rename the produced file :)</span>
+									<span class="n">roires_name</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">roinew_name</span><span class="p">)</span>
+									<span class="c1">#Update the list of output channel names</span>
+									<span class="n">roi_channels</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">roi</span><span class="p">)]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">roinew_name</span><span class="p">))</span>
+
+									<span class="c1">#Clear the nifti objects</span>
+									<span class="n">tmpcrop</span> <span class="o">=</span> <span class="kc">None</span>
+
+							<span class="c1">#Clear the nifti full tissue result</span>
+							<span class="n">niiResult</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+					<span class="c1">#Access each temporary roi results folder and concatenate the results</span>
+					<span class="k">for</span> <span class="n">roi</span><span class="p">,</span> <span class="n">pars</span> <span class="ow">in</span> <span class="n">crops</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+						<span class="c1">#Concatenate the output channels into a single result file in the output directory</span>
+						<span class="n">roi_results</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">concat_images</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">roi_channels</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">roi</span><span class="p">)]])</span>
+						<span class="c1">#Check to see if there is fixed image padding</span>
+						<span class="k">if</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;fixed_pad&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+							<span class="c1">#Get the value of the padding</span>
+							<span class="n">pads</span> <span class="o">=</span> <span class="n">pars</span><span class="p">[</span><span class="s1">&#39;fixed_pad&#39;</span><span class="p">]</span>
+							<span class="c1">#Extract only the needed region</span>
+							<span class="n">roi_results</span> <span class="o">=</span> <span class="n">roi_results</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()[</span><span class="n">pads</span><span class="p">:</span><span class="o">-</span><span class="n">pads</span><span class="p">,</span><span class="n">pads</span><span class="p">:</span><span class="o">-</span><span class="n">pads</span><span class="p">,:]</span>
+						<span class="c1">#create a filename for the full nifti results</span>
+						<span class="n">roi_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">),</span><span class="nb">str</span><span class="p">(</span><span class="n">roi</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;_result&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="p">))</span>
+						<span class="c1"># use the exported from hdiutils</span>
+						<span class="n">hdi_exporter</span><span class="o">.</span><span class="n">HDIexporter</span><span class="p">(</span><span class="n">full_result</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">roi_name</span><span class="p">)</span>
+
+						<span class="c1">#Remove roi results from memory</span>
+						<span class="n">roi_results</span> <span class="o">=</span> <span class="kc">None</span>
+
+						<span class="c1">#Now delete the temporary folder stored for the single channel ROI results</span>
+						<span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">tmpfolds</span><span class="p">[</span><span class="n">roi</span><span class="p">],</span> <span class="n">ignore_errors</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+		<span class="c1"># remove the temporary image if there was a nifti-1 intermediate</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">intermediate</span><span class="p">:</span>
+			<span class="c1"># remove using pathlib</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+		<span class="c1">#Print update</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished&quot;</span><span class="p">)</span>
+
+		<span class="c1">#Return the command</span>
+		<span class="c1">#return self.command</span>
+
+	<span class="k">def</span> <span class="nf">_singlechannelTransformixArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">niiIn</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Helper function for single channel transformix call on array data.</span>
+
+<span class="sd">		Parameters</span>
+<span class="sd">		----------</span>
+<span class="sd">		niiIn: class HDIreader</span>
+<span class="sd">			Input image that is read initially with the hdiutils python package.</span>
+<span class="sd">			The details of the image are stored inside of this class object,</span>
+<span class="sd">			and the ``Transformix`` class will access those to automatically</span>
+<span class="sd">			process the image.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># here we will get the extension of the image and will convert it to the nift-1</span>
+		<span class="c1"># format if it is not already in that format. While users can supply their own</span>
+		<span class="c1"># nifti formatted image to the pipeline, this ensures that other file formats</span>
+		<span class="c1"># can be used, although, it creates additionally overhead</span>
+		<span class="c1"># here we supply all preprocessing commands that were used to preprocess or morph</span>
+		<span class="c1"># the array size of the input image through the hdiprep workflow. Transformix</span>
+		<span class="c1"># must be run on images with the same size as the elastix registration</span>
+		<span class="k">if</span> <span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="o">!=</span><span class="s2">&quot;.nii&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="o">!=</span><span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="o">!=</span><span class="kc">None</span><span class="p">)):</span>
+			<span class="c1"># get the shape of the image</span>
+			<span class="n">shp</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image_shape</span><span class="p">)</span>
+			<span class="c1"># create new name for the temporary image</span>
+			<span class="n">tmp_nm</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="nb">next</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">_get_candidate_names</span><span class="p">())</span><span class="o">+</span><span class="s2">&quot;.nii&quot;</span><span class="p">)</span>
+			<span class="c1"># export nifti intermediate</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Creating nifti-1 intermediate for registration&#39;</span><span class="p">)</span>
+			<span class="c1"># check for padding</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+				<span class="c1"># pad the single-channel</span>
+				<span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span><span class="p">,[(</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">)</span>
+			<span class="c1"># check for image resizing</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">crops</span><span class="o">==</span><span class="kc">None</span><span class="p">):</span>
+				<span class="c1"># transform the image</span>
+				<span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">resize</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">)</span>
+
+			<span class="c1"># Create nifti oject -- transpose axes because of the transformation!</span>
+			<span class="n">nii_im</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">Nifti1Image</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+			<span class="c1">#Save the nifti image</span>
+			<span class="n">nib</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nii_im</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">tmp_nm</span><span class="p">))</span>
+			<span class="c1"># remove the nifit memory</span>
+			<span class="n">nii_im</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="c1"># update the image name</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Using nifti-1 intermediate for registration&#39;</span><span class="p">)</span>
+			<span class="c1"># update the input image</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">in_im</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tmp_nm</span><span class="p">)</span>
+			<span class="c1"># update the intermediate flag</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">intermediate</span> <span class="o">=</span> <span class="kc">True</span>
+			<span class="c1">#Remove loaded image to clear memory</span>
+			<span class="n">niiIn</span> <span class="o">=</span> <span class="kc">None</span>
+
+		<span class="c1">#Print update</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Detected single channel input images...&#39;</span><span class="p">)</span>
+		<span class="c1">#Update the fixed channels</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">in_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="p">)</span>
+
+		<span class="c1">#add transform -- check for list size</span>
+		<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+			<span class="c1">#Run the composition function for transformix</span>
+			<span class="n">res_name</span> <span class="o">=</span> <span class="n">MultiTransformix</span><span class="p">(</span><span class="n">in_im</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">,</span> <span class="n">tps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">)</span>
+
+		<span class="c1">#Otherwise only use the first transform parameter</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1">#Updatethe command with the single channel path alone</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="p">)</span>
+			<span class="c1">#use the first transform parameter file</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -tp &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+			<span class="c1">#Update the command with the output directory</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -out &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">)</span>
+			<span class="c1">#Run single channel transformix without temporary directories</span>
+			<span class="n">RunTransformix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">)</span>
+			<span class="c1">#Get a result name for the output of transformix (assumes nifti for now)</span>
+			<span class="n">res_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">suffix</span><span class="p">))</span>
+
+		<span class="c1">#Create a new name</span>
+		<span class="n">new_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">baseName</span><span class="o">+</span><span class="s1">&#39;_result&#39;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="p">))</span>
+
+		<span class="c1"># check if the output format needs to be switched -- set by the user</span>
+		<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="o">!=</span><span class="s2">&quot;.nii&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="o">!=</span><span class="kc">None</span><span class="p">):</span>
+			<span class="c1"># use HDIreader for now to parse image and exporter to export</span>
+			<span class="n">niiIn</span> <span class="o">=</span> <span class="n">hdi_reader</span><span class="o">.</span><span class="n">HDIreader</span><span class="p">(</span>
+			    <span class="n">path_to_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="p">,</span>
+			    <span class="n">path_to_markers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+			    <span class="n">flatten</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+			    <span class="n">subsample</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+			    <span class="n">mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+			    <span class="n">save_mem</span><span class="o">=</span><span class="kc">False</span>
+			<span class="p">)</span>
+			<span class="c1"># check the trim</span>
+			<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+				<span class="c1"># trim the image borders</span>
+				<span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">:</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">:</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">]</span>
+			<span class="c1"># export new data</span>
+			<span class="n">hdi_exporter</span><span class="o">.</span><span class="n">HDIexporter</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span><span class="p">,</span><span class="n">new_name</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1"># simply rename the file that is already in the nifti format</span>
+			<span class="n">res_name</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">new_name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_multichannelTransformixArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">niiIn</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Helper function for running multichannel transformix on array data.</span>
+
+<span class="sd">		Parameters</span>
+<span class="sd">		----------</span>
+<span class="sd">		niiIn: class HDIreader</span>
+<span class="sd">			Input image that is read initially with the hdiutils python package.</span>
+<span class="sd">			The details of the image are stored inside of this class object,</span>
+<span class="sd">			and the ``Transformix`` class will access those to automatically</span>
+<span class="sd">			process the image.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># create a temporary directory using the context manager for channel-wise images</span>
+		<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmpdirname</span><span class="p">:</span>
+			<span class="c1"># Print update</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Created temporary directory&#39;</span><span class="p">,</span> <span class="n">tmpdirname</span><span class="p">)</span>
+			<span class="c1"># Iterate through the channels</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">num_channels</span><span class="p">):</span>
+				<span class="c1"># Print update</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Working on slice &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+				<span class="c1"># Create a name for a temporary image</span>
+				<span class="n">im_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">stem</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.nii&quot;</span><span class="p">))</span>
+				<span class="c1"># Update the list of names for image channels</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">in_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">im_name</span><span class="p">)</span>
+				<span class="c1"># set a temporary channel to work with throughout the data prep stage</span>
+				<span class="n">slice_in</span> <span class="o">=</span> <span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">image</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">]</span>
+
+				<span class="c1"># Check to see if the path exists</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">im_name</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+					<span class="c1"># check for padding</span>
+					<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+						<span class="c1"># pad the single-channel</span>
+						<span class="n">slice_in</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">slice_in</span><span class="p">,[(</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">)</span>
+					<span class="c1"># Check to see if there is a target size for the image</span>
+					<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+						<span class="c1"># Resize the image</span>
+						<span class="n">slice_in</span> <span class="o">=</span> <span class="n">resize</span><span class="p">(</span><span class="n">slice_in</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">)</span>
+
+					<span class="c1"># Create a nifti image from this slice</span>
+					<span class="n">nii_im</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">Nifti1Image</span><span class="p">(</span><span class="n">slice_in</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+					<span class="c1"># remove memory</span>
+					<span class="n">slice_in</span> <span class="o">=</span> <span class="kc">None</span>
+					<span class="c1">#Save the nifti image</span>
+					<span class="n">nib</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nii_im</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">im_name</span><span class="p">))</span>
+					<span class="c1">#Remove the nifti slice to clear memory</span>
+					<span class="n">nii_im</span> <span class="o">=</span> <span class="kc">None</span>
+
+				<span class="c1">#add transform -- check for list size</span>
+				<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+					<span class="c1">#Run the composition function for transformix</span>
+					<span class="n">res_name</span> <span class="o">=</span> <span class="n">MultiTransformix</span><span class="p">(</span><span class="n">in_im</span> <span class="o">=</span> <span class="n">im_name</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="n">tmpdirname</span><span class="p">,</span> <span class="n">tps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">)</span>
+
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1">#Create a temporary command to be sent to the shell</span>
+					<span class="n">tmp_command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">im_name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; -out &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">)</span>
+					<span class="c1">#Add full tissue transform paramaeters</span>
+					<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span> <span class="s1">&#39; -tp &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+					<span class="c1">#Send the command to the shell</span>
+					<span class="n">RunTransformix</span><span class="p">(</span><span class="n">tmp_command</span><span class="p">)</span>
+
+					<span class="c1">#Get a temporary result name for the output of transformix (assumes nifti for now)</span>
+					<span class="n">res_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="s2">&quot;.nii&quot;</span><span class="p">))</span>
+
+				<span class="c1"># remove the temporary image if there was a nifti-1 intermediate</span>
+				<span class="n">im_name</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+
+				<span class="c1">#Create a new name</span>
+				<span class="n">new_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">stem</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;_result&#39;</span><span class="o">+</span><span class="s2">&quot;.nii&quot;</span><span class="p">))</span>
+				<span class="c1">#Get the resulting image to rename (so we don&#39;t overwrite results)</span>
+				<span class="n">res_name</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">new_name</span><span class="p">)</span>
+				<span class="c1">#Update the list of output channel names</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_name</span><span class="p">)</span>
+
+			<span class="c1">#Remove loaded image to clear memory</span>
+			<span class="n">niiIn</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="c1">#Concatenate the output channels into a single result file in the output directory</span>
+			<span class="n">full_result</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">concat_images</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">])</span>
+			<span class="c1">#create a filename for the full nifti results</span>
+			<span class="n">full_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">baseName</span><span class="o">+</span><span class="s2">&quot;_result&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="p">))</span>
+
+			<span class="c1"># check if the output format needs to be switched -- set by the user</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="o">!=</span><span class="s2">&quot;.nii&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="o">!=</span><span class="kc">None</span><span class="p">):</span>
+				<span class="c1"># check the trim</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+					<span class="c1"># trim the image borders</span>
+					<span class="n">full_result</span> <span class="o">=</span> <span class="n">full_result</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">:</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">:</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">,:]</span>
+					<span class="c1"># export new data</span>
+					<span class="n">hdi_exporter</span><span class="o">.</span><span class="n">HDIexporter</span><span class="p">(</span><span class="n">full_result</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">full_name</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1"># export the non trimmed image</span>
+					<span class="n">hdi_exporter</span><span class="o">.</span><span class="n">HDIexporter</span><span class="p">(</span><span class="n">full_result</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">full_name</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># export new data using the aggregated nifti objects</span>
+				<span class="c1"># doesnt need to be formally read in because it is memory</span>
+				<span class="c1"># mapped to the full_result object</span>
+				<span class="n">hdi_exporter</span><span class="o">.</span><span class="n">HDIexporter</span><span class="p">(</span><span class="n">full_result</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">full_name</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">_multichannelTransformixRaster</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">niiIn</span><span class="p">):</span>
+		<span class="sd">&quot;&quot;&quot;Helper function for running multichannel transformix on raster data.</span>
+
+<span class="sd">		Parameters</span>
+<span class="sd">		----------</span>
+<span class="sd">		niiIn: class HDIreader</span>
+<span class="sd">			Input image that is read initially with the hdiutils python package.</span>
+<span class="sd">			The details of the image are stored inside of this class object,</span>
+<span class="sd">			and the ``Transformix`` class will access those to automatically</span>
+<span class="sd">			process the image.</span>
+<span class="sd">		&quot;&quot;&quot;</span>
+		<span class="c1"># create a temporary directory using the context manager for channel-wise images</span>
+		<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmpdirname</span><span class="p">:</span>
+			<span class="c1"># Print update</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Created temporary directory&#39;</span><span class="p">,</span> <span class="n">tmpdirname</span><span class="p">)</span>
+			<span class="c1"># Iterate through the channels</span>
+			<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">num_channels</span><span class="p">):</span>
+				<span class="c1"># Print update</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Working on slice &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+				<span class="c1"># Create a name for a temporary image</span>
+				<span class="n">im_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">stem</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.nii&quot;</span><span class="p">))</span>
+				<span class="c1"># Update the list of names for image channels</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">in_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">im_name</span><span class="p">)</span>
+				<span class="c1"># set a temporary channel to work with throughout the data prep stage</span>
+				<span class="n">slice_in</span> <span class="o">=</span> <span class="n">niiIn</span><span class="o">.</span><span class="n">hdi</span><span class="o">.</span><span class="n">CreateSingleChannelArray</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+				<span class="c1"># Check to see if the path exists</span>
+				<span class="k">if</span> <span class="ow">not</span> <span class="n">im_name</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+					<span class="c1"># check for padding</span>
+					<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+						<span class="c1"># pad the single-channel</span>
+						<span class="n">slice_in</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">slice_in</span><span class="p">,[(</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">[</span><span class="mi">1</span><span class="p">])],</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">)</span>
+					<span class="c1"># Check to see if there is a target size for the image</span>
+					<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+						<span class="c1"># Resize the image</span>
+						<span class="n">slice_in</span> <span class="o">=</span> <span class="n">resize</span><span class="p">(</span><span class="n">slice_in</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">)</span>
+
+					<span class="c1"># Create a nifti image from this slice</span>
+					<span class="n">nii_im</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">Nifti1Image</span><span class="p">(</span><span class="n">slice_in</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+					<span class="c1"># remove memory</span>
+					<span class="n">slice_in</span> <span class="o">=</span> <span class="kc">None</span>
+					<span class="c1">#Save the nifti image</span>
+					<span class="n">nib</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nii_im</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">im_name</span><span class="p">))</span>
+					<span class="c1">#Remove the nifti slice to clear memory</span>
+					<span class="n">nii_im</span> <span class="o">=</span> <span class="kc">None</span>
+
+				<span class="c1">#add transform -- check for list size</span>
+				<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+					<span class="c1">#Run the composition function for transformix</span>
+					<span class="n">res_name</span> <span class="o">=</span> <span class="n">MultiTransformix</span><span class="p">(</span><span class="n">in_im</span> <span class="o">=</span> <span class="n">im_name</span><span class="p">,</span> <span class="n">out_dir</span> <span class="o">=</span> <span class="n">tmpdirname</span><span class="p">,</span> <span class="n">tps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">)</span>
+
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1">#Create a temporary command to be sent to the shell</span>
+					<span class="n">tmp_command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -in &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">im_name</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; -out &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">)</span>
+					<span class="c1">#Add full tissue transform paramaeters</span>
+					<span class="n">tmp_command</span> <span class="o">=</span> <span class="n">tmp_command</span> <span class="o">+</span> <span class="s1">&#39; -tp &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tps</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+					<span class="c1">#Send the command to the shell</span>
+					<span class="n">RunTransformix</span><span class="p">(</span><span class="n">tmp_command</span><span class="p">)</span>
+
+					<span class="c1">#Get a temporary result name for the output of transformix (assumes nifti for now)</span>
+					<span class="n">res_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="s2">&quot;result&quot;</span><span class="o">+</span><span class="s2">&quot;.nii&quot;</span><span class="p">))</span>
+
+				<span class="c1"># remove the temporary image if there was a nifti-1 intermediate</span>
+				<span class="n">im_name</span><span class="o">.</span><span class="n">unlink</span><span class="p">()</span>
+
+				<span class="c1">#Create a new name</span>
+				<span class="n">new_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">in_im</span><span class="o">.</span><span class="n">stem</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;_result&#39;</span><span class="o">+</span><span class="s2">&quot;.nii&quot;</span><span class="p">))</span>
+				<span class="c1">#Get the resulting image to rename (so we don&#39;t overwrite results)</span>
+				<span class="n">res_name</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">new_name</span><span class="p">)</span>
+				<span class="c1">#Update the list of output channel names</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_name</span><span class="p">)</span>
+
+			<span class="c1">#Remove loaded image to clear memory</span>
+			<span class="n">niiIn</span> <span class="o">=</span> <span class="kc">None</span>
+			<span class="c1">#Concatenate the output channels into a single result file in the output directory</span>
+			<span class="n">full_result</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">concat_images</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_channels</span><span class="p">])</span>
+			<span class="c1">#create a filename for the full nifti results</span>
+			<span class="n">full_name</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">baseName</span><span class="o">+</span><span class="s2">&quot;_result&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="p">))</span>
+
+			<span class="c1"># check if the output format needs to be switched -- set by the user</span>
+			<span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_ext</span><span class="o">!=</span><span class="s2">&quot;.nii&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="o">!=</span><span class="kc">None</span><span class="p">):</span>
+				<span class="c1"># check the trim</span>
+				<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="o">!=</span><span class="kc">None</span><span class="p">:</span>
+					<span class="c1"># trim the image borders</span>
+					<span class="n">full_result</span> <span class="o">=</span> <span class="n">full_result</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()[</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">:</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">:</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">trim</span><span class="p">,:]</span>
+					<span class="c1"># export new data</span>
+					<span class="n">hdi_exporter</span><span class="o">.</span><span class="n">HDIexporter</span><span class="p">(</span><span class="n">full_result</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">full_name</span><span class="p">)</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="c1"># export the non trimmed image</span>
+					<span class="n">hdi_exporter</span><span class="o">.</span><span class="n">HDIexporter</span><span class="p">(</span><span class="n">full_result</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">full_name</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="c1"># export new data using the aggregated nifti objects</span>
+				<span class="c1"># doesnt need to be formally read in because it is memory</span>
+				<span class="c1"># mapped to the full_result object</span>
+				<span class="n">hdi_exporter</span><span class="o">.</span><span class="n">HDIexporter</span><span class="p">(</span><span class="n">full_result</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">full_name</span><span class="p">)</span></div>
+
+
+
+
+<span class="c1">#</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Joshua Hess.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

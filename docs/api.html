@@ -1,0 +1,1195 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>API Guide &mdash; miaaim 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Background" href="background.html" />
+    <link rel="prev" title="Jupyter Notebook Zoo" href="jupyter.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: 5DADE2" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> miaaim
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Nextflow User Guide / Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#linux-os-x">Linux / OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing-miaaim-in-python">Installing MIAAIM in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick_start.html#prototype-001">prototype-001</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quick_start.html#download-data">Download Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quick_start.html#image-preprocessing">Image Preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quick_start.html#image-registration">Image Registration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="directory.html">Folder Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="directory.html#input">input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory.html#hdiprep">hdiprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory.html#hdireg">hdireg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory.html#docs">docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="workflows.html">Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workflows.html#yaml-parameter-file-input-basics">YAML Parameter File Input Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflows.html#high-parameter-image-processing">High-Parameter Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflows.html#histological-image-processing">Histological Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="workflows.html#hdiprep-implementation-guide">HDIprep Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="workflows.html#hdireg-implementation-guide">HDIreg Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html#tissue-state-modelling-patchmap">Tissue State Modelling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="workflows.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="parameters.html">Parameter Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html#nextflow">Nextflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html#hdiprep">HDIprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parameters.html#hdireg">HDIreg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#docker-singularity-containers">Docker/Singularity Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#resource-allocation">Resource Allocation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#memory">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#cpu">CPU</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#preset-resource-allocation-options">Preset Resource Allocation Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="provenance.html">Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#adding-imaging-modalities">Adding Imaging Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#importing-new-modalities-adding-file-formats">Importing New Modalities / Adding File Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MIAAIM in Python</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="python.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#usage-without-docker-install-with-pip">Usage without Docker / Install with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#reproducibility-with-pip">Reproducibility with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#docker">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#hdi-utility-functions-hdi-utils">HDI Utility Functions (hdi-utils)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python-workflows.html">Workflow Implementations in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python-workflows.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python-workflows.html#steady-state-umap-compression">Steady-state UMAP compression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python-workflows.html#histological-image-processing">Histological Image Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python-workflows.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python-workflows.html#elastix">elastix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python-workflows.html#transformix">transformix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="python-workflows.html#tissue-state-modeling-patchmap">Tissue State Modeling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-workflows.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter Notebook Zoo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#image-registration-hdireg">Image Registration (HDIreg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter.html#id1">Image Registration (HDIreg)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-hdiprep.HDIprep.hdi_prep">hdi_prep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-hdiprep.HDIprep.utils">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-hdireg.HDIreg.elastix">elastix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-hdireg.HDIreg.transformix">transformix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tissue-state-modeling-patchmap">Tissue State Modeling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Background on MIAAIM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elastix.html">Elastix Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="elastix.html#registration-parameter-files-elastix">Registration Parameter Files (Elastix)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="elastix.html#multi-channel-input">Multi-channel Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elastix.html#single-channel-input">Single-channel Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elastix.html#help-the-registration-with-manual-landmarks">Help the Registration with Manual Landmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="elastix.html#outputs">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="elastix.html#applying-transformations-transformix">Applying Transformations (Transformix)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Roadmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">MIAAIM Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#miaaim-0-0-1">MIAAIM 0.0.1</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#adding-imaging-modalities">Adding Imaging Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contributing.html#importing-new-modalities-adding-file-formats">Importing New Modalities / Adding File Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">FAQs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contact</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="contact.html">Contact Information</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Funding</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="funding.html">Funding</a></li>
+</ul>
+<p class="caption"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acknowledgements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">miaaim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>API Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/JoshuaHess12/miaaim/blob/0.0.1api.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-guide">
+<h1>API Guide<a class="headerlink" href="#api-guide" title="Permalink to this headline">¶</a></h1>
+<p>Here we outline the modules, classes, and key functions to use in the MIAAIM
+workflow in Python.</p>
+<div class="section" id="image-preparation-hdiprep">
+<h2>Image Preparation (HDIprep)<a class="headerlink" href="#image-preparation-hdiprep" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-hdiprep.HDIprep.hdi_prep">
+<span id="hdi-prep"></span><h3>hdi_prep<a class="headerlink" href="#module-hdiprep.HDIprep.hdi_prep" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.CreateDataset">
+<span class="sig-prename descclassname"><span class="pre">hdiprep.HDIprep.hdi_prep.</span></span><span class="sig-name descname"><span class="pre">CreateDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_paths</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#CreateDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.CreateDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an intramodality imaging dataset based on a given list of paths
+for imaging files.</p>
+<dl class="simple">
+<dt>list_of_paths: list of length n_samples.</dt><dd><p>Input data to concatenate into a single dataset. Each input dataset
+is of the class HDIreader from the hdiutils python package.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>data: class object.</dt><dd><p>Dataset with concatenated image data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">hdiprep.HDIprep.hdi_prep.</span></span><span class="sig-name descname"><span class="pre">IntraModalityDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_HDIimports</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Merge HDIreader classes storing imaging datasets.</p>
+<dl class="simple">
+<dt>list_of_HDIimports: list of length (n_samples)</dt><dd><p>Merges input HDIreader objects to be merged into single class.</p>
+</dd>
+</dl>
+<p>Initialized class objects:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>self.set_dict: dictionary</dt><dd><p>Dictionary containing each input samples filename as the key.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>self.umap_object: object of class UMAP</dt><dd><p>Stores any UMAP class objects after running UMAP.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>self.umap_embeddings: dictionary</dt><dd><p>Dictionary storing UMAP embeddings for each input sample.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>self.umap_optimal_dim: integer</dt><dd><p>Specifies steady state embedding dimensionality for UMAP.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>self.processed_images_export: None or dictionary after <code class="docutils literal notranslate"><span class="pre">ExportNifti1</span></code></dt><dd><p>Dictionary that links input file names with new export file names.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>self.landmarks: integer</dt><dd><p>Specifies number of landmarks to use for steady state embedding dimensionality
+estimation.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.ApplyManualMask">
+<span class="sig-name descname"><span class="pre">ApplyManualMask</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.ApplyManualMask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.ApplyManualMask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply input mask to image. This function is
+primarily used on histology images and images that do not need dimension
+reduction. Dimension reduction with a mask will by default zero all other pixels
+in the image outside of the mask, but do not use this function if
+performing dimension reduction.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.ApplyMask">
+<span class="sig-name descname"><span class="pre">ApplyMask</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.ApplyMask"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.ApplyMask" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply mask to image. This function is
+primarily used on histology images and images that do not need dimension
+reduction. Should be used after a series of morphological
+operations. This applies the resulting mask of thresholding and
+morphological operations.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.Close">
+<span class="sig-name descname"><span class="pre">Close</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disk_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.Close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.Close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Morphological closing on boolean array (i.e., a mask).
+A circular disk is used for the filtering.</p>
+<dl class="simple">
+<dt>filter_size: integer</dt><dd><p>Size of disk to use for the median filter.</p>
+</dd>
+<dt>parallel: Bool (Default: False)</dt><dd><p>Use parallel processing with all available CPUs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.ExportNifti1">
+<span class="sig-name descname"><span class="pre">ExportNifti1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.ExportNifti1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.ExportNifti1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export processed images resulting from UMAP and
+spatially mapping UMAP, or exporting processed histology images.</p>
+<dl class="simple">
+<dt>output_dir: string</dt><dd><p>Path to output directory to store processed nifti image.</p>
+</dd>
+<dt>padding: string of tuple of type integer (padx,pady; Default: None)</dt><dd><p>Indicates height and length padding to add to the image before exporting.</p>
+</dd>
+<dt>target_size: string of tuple of type integer (sizex,sizey; Default: None)</dt><dd><p>Resize image using bilinear interpolation before exporting.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.Fill">
+<span class="sig-name descname"><span class="pre">Fill</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.Fill"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.Fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Morphological filling on a binary mask. Fills holes in the given mask.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.MedianFilter">
+<span class="sig-name descname"><span class="pre">MedianFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filter_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.MedianFilter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.MedianFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Median filtering of images to remove salt and pepper noise.
+A circular disk is used for the filtering. Images that are not single channel
+are automatically converted to grayscale prior to filtering.</p>
+<dl class="simple">
+<dt>filter_size: integer</dt><dd><p>Size of disk to use for the median filter.</p>
+</dd>
+<dt>parallel: Bool (Default: False)</dt><dd><p>Use parallel processing with all available CPUs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.NonzeroBox">
+<span class="sig-name descname"><span class="pre">NonzeroBox</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.NonzeroBox"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.NonzeroBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use a nonzero indices of a binary mask to create a bounding box for
+the mask itself and for the original image. This isused so that
+a controlled amount of padding can be added to the edges of the images in
+a consistent manner.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.Open">
+<span class="sig-name descname"><span class="pre">Open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disk_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parallel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.Open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.Open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Morphological opening on boolean array (i.e., a mask).
+A circular disk is used for the filtering.</p>
+<dl class="simple">
+<dt>filter_size: integer</dt><dd><p>Size of disk to use for the median filter.</p>
+</dd>
+<dt>parallel: Bool (Default: False)</dt><dd><p>Use parallel processing with all available CPUs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.RunOptimalParametricUMAP">
+<span class="sig-name descname"><span class="pre">RunOptimalParametricUMAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">11)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmarks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_diagnostics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.RunOptimalParametricUMAP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.RunOptimalParametricUMAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run parametric UMAP over a range of dimensions to choose steady state embedding
+by fitting an exponential regression model to the fuzzy set cross entropy
+curve.</p>
+<dl class="simple">
+<dt>dim_range: tuple (low_dim, high_dim; Default: (1,11))</dt><dd><p>Indicates a range of embedding dimensions.</p>
+</dd>
+<dt>landmarks: integer (Default: 3000)</dt><dd><p>Specifies number of landmarks to use for steady state embedding dimensionality
+estimation.</p>
+</dd>
+<dt>export_diagnostics: Bool (Default: False)</dt><dd><p>Indicates whether or not to export a csv file and jpeg image showing
+steady state embedding dimensionality reports. These report the
+normalized (0-1 range) fuzzy set cross entropy across the range
+of indicated dimensionalities.</p>
+</dd>
+<dt>output_dir: string (Default: None)</dt><dd><p>Path to export data to if exporting diagnostic images and plots.</p>
+</dd>
+<dt>n_jobs: integer (Default: 1)</dt><dd><p>Path to export data to if exporting diagnostic images and plots.</p>
+</dd>
+<dt>kwargs: key word arguments passed to UMAP.</dt><dd><p>Important arguments:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>n_neighbors: integer</dt><dd><p>Specifies number of nearest neighbors.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>random_state: integer</dt><dd><p>Specifies random state for reproducibility.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.RunOptimalUMAP">
+<span class="sig-name descname"><span class="pre">RunOptimalUMAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dim_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(1,</span> <span class="pre">11)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">landmarks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">export_diagnostics</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.RunOptimalUMAP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.RunOptimalUMAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run UMAP over a range of dimensions to choose steady state embedding
+by fitting an exponential regression model to the fuzzy set cross entropy
+curve.</p>
+<dl class="simple">
+<dt>dim_range: tuple (low_dim, high_dim; Default: (1,11))</dt><dd><p>Indicates a range of embedding dimensions.</p>
+</dd>
+<dt>landmarks: integer (Default: 3000)</dt><dd><p>Specifies number of landmarks to use for steady state embedding dimensionality
+estimation.</p>
+</dd>
+<dt>export_diagnostics: Bool (Default: False)</dt><dd><p>Indicates whether or not to export a csv file and jpeg image showing
+steady state embedding dimensionality reports. These report the
+normalized (0-1 range) fuzzy set cross entropy across the range
+of indicated dimensionalities.</p>
+</dd>
+<dt>output_dir: string (Default: None)</dt><dd><p>Path to export data to if exporting diagnostic images and plots.</p>
+</dd>
+<dt>n_jobs: integer (Default: 1)</dt><dd><p>Path to export data to if exporting diagnostic images and plots.</p>
+</dd>
+<dt>kwargs: key word arguments passed to UMAP.</dt><dd><p>Important arguments:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>n_neighbors: integer</dt><dd><p>Specifies number of nearest neighbors.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>random_state: integer</dt><dd><p>Specifies random state for reproducibility.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.RunParametricUMAP">
+<span class="sig-name descname"><span class="pre">RunParametricUMAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.RunParametricUMAP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.RunParametricUMAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an embedding of high-dimensional imaging data using
+UMAP parametrized by neural network. Each
+pixel will be represented by its coordinates in the UMAP projection
+space.</p>
+<dl class="simple">
+<dt>kwargs: key word arguments passed to UMAP.</dt><dd><p>Important arguments:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>n_neighbors: integer</dt><dd><p>Specifies number of nearest neighbors.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>random_state: integer</dt><dd><p>Specifies random state for reproducibility.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>self.umap_embeddings: dictionary</dt><dd><p>Stores umap coordinates for each input file as the dictionary key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.RunUMAP">
+<span class="sig-name descname"><span class="pre">RunUMAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.RunUMAP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.RunUMAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an embedding of high-dimensional imaging data. Each
+pixel will be represented by its coordinates in the UMAP projection
+space.</p>
+<dl class="simple">
+<dt>kwargs: arguments passed to UMAP.</dt><dd><p>Important arguments:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>n_neighbors: integer</dt><dd><p>Specifies number of nearest neighbors.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>random_state: integer</dt><dd><p>Specifies random state for reproducibility.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>self.umap_embeddings: dictionary</dt><dd><p>Stores umap coordinates for each input file as the dictionary key.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.SpatiallyMapUMAP">
+<span class="sig-name descname"><span class="pre">SpatiallyMapUMAP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rectangular'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_mem</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.SpatiallyMapUMAP"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.SpatiallyMapUMAP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map UMAP projections into the spatial domain (2-dimensional) using
+each pixel’s original XY positions.</p>
+<dl>
+<dt>method: string (Default: “rectangular”)</dt><dd><p>Type of mapping to use for reconstructing an image from the UMAP
+embeddings.</p>
+<p>Options include:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“rectangular”</dt><dd><p>Use for images that do not have an associated mask with them. This
+is the fastest option for spatial reconstruction.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“coordinate”</dt><dd><p>Use each pixel’s XY coordinate to fill an array one pixel at a
+time. This must be used for images that contain masks or are
+not stored as rectangular arrays.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>save_mem: Bool (Default: True)</dt><dd><p>Save memory by deleting reserves of full images and intermediate steps.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.hdi_prep.IntraModalityDataset.Threshold">
+<span class="sig-name descname"><span class="pre">Threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'otsu'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/hdi_prep.html#IntraModalityDataset.Threshold"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.hdi_prep.IntraModalityDataset.Threshold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Threshold grayscale images. Produces a sparse boolean
+mask.</p>
+<dl>
+<dt>type: string (Default: “otsu”)</dt><dd><p>Type of thresholding to use.</p>
+<p>Options include:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“otsu”</dt><dd><p>Otsu automated thresholding.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“manual”</dt><dd><p>Set manual threshold value.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>thresh_value: float (Default: None)</dt><dd><p>Manual threshold to use if <code class="docutils literal notranslate"><span class="pre">type</span></code> is set to “manual”</p>
+</dd>
+<dt>correction: float (Default: 1.0)</dt><dd><p>Correct factor to multiply threshold by for more stringent thresholding.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdiprep.HDIprep.utils">
+<span id="utils"></span><h3>utils<a class="headerlink" href="#module-hdiprep.HDIprep.utils" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.utils.CreateHyperspectralImage">
+<span class="sig-prename descclassname"><span class="pre">hdiprep.HDIprep.utils.</span></span><span class="sig-name descname"><span class="pre">CreateHyperspectralImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/utils.html#CreateHyperspectralImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.utils.CreateHyperspectralImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill a hyperspectral image from n-dimensional embedding of high-dimensional
+imaging data by rescaling each channel from 0-1 (optional). All coordinates
+in the image not listed in coordinates object will be masked
+and set to 0 (background).</p>
+<dl class="simple">
+<dt>embedding: Pandas DataFrame</dt><dd><p>Indicates embedding coordinates from UMAP or another method.</p>
+</dd>
+<dt>array_size: tuple</dt><dd><p>Indicates size of image.</p>
+</dd>
+<dt>coordinates: 1-indexed list of tuples</dt><dd><p>Indicates pixel coordinates of image.</p>
+</dd>
+<dt>scale: Bool (Default: True)</dt><dd><p>Rescale pixel intensities on the range of 0-1.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>im: array</dt><dd><p>Reconstructed image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.utils.CreateHyperspectralImageRectangular">
+<span class="sig-prename descclassname"><span class="pre">hdiprep.HDIprep.utils.</span></span><span class="sig-name descname"><span class="pre">CreateHyperspectralImageRectangular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">embedding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/utils.html#CreateHyperspectralImageRectangular"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.utils.CreateHyperspectralImageRectangular" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill a hyperspectral image from n-dimensional embedding of high-dimensional
+imaging data by rescaling each channel from 0-1 (optional). All coordinates
+in the image not listed in coordinates object will be masked
+and set to 0 (background). This function assumes that the data you want
+to reconstruct can be automatically reshaped into a rectangular array.</p>
+<dl class="simple">
+<dt>embedding: Pandas DataFrame</dt><dd><p>Indicates embedding coordinates from UMAP or another method.</p>
+</dd>
+<dt>array_size: tuple</dt><dd><p>Indicates size of image.</p>
+</dd>
+<dt>coordinates: 1-indexed list of tuples</dt><dd><p>Indicates pixel coordinates of image.</p>
+</dd>
+<dt>scale: Bool (Default: True)</dt><dd><p>Rescale pixel intensities on the range of 0-1.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>im: array</dt><dd><p>Reconstructed image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.utils.Exp">
+<span class="sig-prename descclassname"><span class="pre">hdiprep.HDIprep.utils.</span></span><span class="sig-name descname"><span class="pre">Exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/utils.html#Exp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.utils.Exp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exponential function to use for regression.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdiprep.HDIprep.utils.ExportNifti">
+<span class="sig-prename descclassname"><span class="pre">hdiprep.HDIprep.utils.</span></span><span class="sig-name descname"><span class="pre">ExportNifti</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdiprep/HDIprep/utils.html#ExportNifti"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdiprep.HDIprep.utils.ExportNifti" title="Permalink to this definition">¶</a></dt>
+<dd><p>Export processed images resulting from UMAP and
+spatially mapping UMAP, or exporting processed histology images.</p>
+<dl class="simple">
+<dt>image: array</dt><dd><p>Array that represents image to export.</p>
+</dd>
+<dt>filename: string</dt><dd><p>Path, including filename, to export processed nifti image to.</p>
+</dd>
+<dt>padding: string of tuple of type integer (padx,pady; Default: None)</dt><dd><p>Indicates height and length padding to add to the image before exporting.</p>
+</dd>
+<dt>target_size: string of tuple of type integer (sizex,sizey; Default: None)</dt><dd><p>Resize image using bilinear interpolation before exporting.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="image-registration-hdireg">
+<h2>Image Registration (HDIreg)<a class="headerlink" href="#image-registration-hdireg" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-hdireg.HDIreg.elastix">
+<span id="elastix"></span><h3>elastix<a class="headerlink" href="#module-hdireg.HDIreg.elastix" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="hdireg.HDIreg.elastix.Elastix">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.elastix.</span></span><span class="sig-name descname"><span class="pre">Elastix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">moving</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fMask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/elastix.html#Elastix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.elastix.Elastix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Elastix image registration class.</p>
+<dl class="simple">
+<dt>fixed: string</dt><dd><p>Path to fixed (reference) image.</p>
+</dd>
+<dt>moving: string</dt><dd><p>Path to moving image (image to be transformed).</p>
+</dd>
+<dt>out_dir: string</dt><dd><p>Path to output directory.</p>
+</dd>
+<dt>p: list (length number of registration parameter files)</dt><dd><p>Path to elastix image registration parameter files (in order of application).</p>
+</dd>
+<dt>fp: string (<a href="#id1"><span class="problematic" id="id2">*</span></a>.txt)</dt><dd><p>Path to fixed image landmark points for manual guidance registration.</p>
+</dd>
+<dt>mp: string (<a href="#id3"><span class="problematic" id="id4">*</span></a>.txt)</dt><dd><p>Path to moving image landmark points for manual guidance registration.</p>
+</dd>
+<dt>fMask: string (<a href="#id5"><span class="problematic" id="id6">*</span></a>.nii)</dt><dd><p>Path to fixed image mask that defines region on image to draw samples
+from during registration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.elastix.RunElastix">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.elastix.</span></span><span class="sig-name descname"><span class="pre">RunElastix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/elastix.html#RunElastix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.elastix.RunElastix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the elastix registration. You must be able to call elastix
+from your command shell to use this. You must also have your parameter
+text files set before running (see elastix parameter files).</p>
+<dl class="simple">
+<dt>command: string</dt><dd><p>Sent to the system for elastix running (see elastix command line implementation).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hdireg.HDIreg.transformix">
+<span id="transformix"></span><h3>transformix<a class="headerlink" href="#module-hdireg.HDIreg.transformix" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.transformix.CreateCompositeTransforms">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.transformix.</span></span><span class="sig-name descname"><span class="pre">CreateCompositeTransforms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/transformix.html#CreateCompositeTransforms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.transformix.CreateCompositeTransforms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a series of transformations to an image using transformix. Prior
+results show that composing transforms in elastix do not yield the same
+result as appying each transformation in series. This will take more time
+but will give the expected result. A new copy of transform parameters will
+be created and exported to the out_dir</p>
+<dl class="simple">
+<dt>tps: list (length number of transformation parameter files)</dt><dd><p>Path to elastix image registration transform parameter files (in order of application).</p>
+</dd>
+<dt>out_dir: string</dt><dd><p>Path to output directory for transform parameters and output results.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>transform_calls: list</dt><dd><p>List of transform parameters to insert into the transformix command “–tp”.</p>
+</dd>
+<dt>init_trans_list: list</dt><dd><p>List of initial transformations in the tranform parameter files. These
+are part of the actual transform parameter .txt files.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.transformix.CropROI">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.transformix.</span></span><span class="sig-name descname"><span class="pre">CropROI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/transformix.html#CropROI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.transformix.CropROI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract region of interest from full image array.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>coords: list</dt><dd><p>Returned from <code class="docutils literal notranslate"><span class="pre">GetCropCoords</span></code></p>
+</dd>
+<dt>full_img: array</dt><dd><p>Contains the image to be cropped from.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>target_size: tuple of type integer (sizex,sizey; Default: None)</dt><dd><p>Resize image using bilinear interpolation before exporting.</p>
+<dl class="simple">
+<dt>nifti_ROI: object of class nibabel.Nifti1Image</dt><dd><p>Returns nibabel nifti object that is the cropped region to be exported.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.transformix.ExtractROIcrop">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.transformix.</span></span><span class="sig-name descname"><span class="pre">ExtractROIcrop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/transformix.html#ExtractROIcrop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.transformix.ExtractROIcrop" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Combine <code class="docutils literal notranslate"><span class="pre">CropROI</span></code> and <code class="docutils literal notranslate"><span class="pre">GetCropCoords</span></code> to return
+a nifti object available for export.</p>
+<dl class="simple">
+<dt>coords_csv: string.</dt><dd><p>Path to csv file containing coordinates.</p>
+</dd>
+<dt>full_img: array</dt><dd><p>Contains the image to be cropped from.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>target_size: tuple of type integer (sizex,sizey; Default: None)</dt><dd><p>Resize image using bilinear interpolation before exporting.</p>
+<dl class="simple">
+<dt>correction: integer (Default: 80)</dt><dd><p>Extra pixels to take on each side of the crop contour for buffer.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>crop_im: object of class nibabel.Nifti1Image</dt><dd><p>Returns nibabel nifti object that is the cropped region to be exported.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.transformix.GetCropCoords">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.transformix.</span></span><span class="sig-name descname"><span class="pre">GetCropCoords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coords_csv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">correction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">80</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/transformix.html#GetCropCoords"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.transformix.GetCropCoords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read csv file containing coordinates for rectangular crop through
+FIJI and return the coordinates as a list.</p>
+<dl class="simple">
+<dt>coords_csv: string.</dt><dd><p>Path to csv file containing coordinates.</p>
+</dd>
+<dt>correction: integer (Default: 80)</dt><dd><p>Extra pixels to take on each side of the crop contour for buffer.</p>
+</dd>
+</dl>
+<p>list with min row, max row, min col, max col coordinates of bounding box.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.transformix.MultiTransformix">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.transformix.</span></span><span class="sig-name descname"><span class="pre">MultiTransformix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tps</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/transformix.html#MultiTransformix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.transformix.MultiTransformix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies multiple transform files in sequence to an image.</p>
+<dl class="simple">
+<dt>in_im: string</dt><dd><p>Input image path.</p>
+</dd>
+<dt>tps: list (length number of transformation parameter files)</dt><dd><p>Path to elastix image registration transform parameter files (in order of application).</p>
+</dd>
+<dt>out_dir: string</dt><dd><p>Path to output directory for transform parameters and output results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.transformix.RunTransformix">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.transformix.</span></span><span class="sig-name descname"><span class="pre">RunTransformix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/transformix.html#RunTransformix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.transformix.RunTransformix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run the transfomix transformation. You must be able to call transformix
+from your command shell to use this. You must also have your transformation
+parameter files set before running (see transformix parameter files).</p>
+<dl class="simple">
+<dt>command: string</dt><dd><p>Sent to the system for transformix running (see elastix command line implementation).</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>command: string</dt><dd><p>Same string as above.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="hdireg.HDIreg.transformix.Transformix">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.transformix.</span></span><span class="sig-name descname"><span class="pre">Transformix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tps</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pad</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crops</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_ext</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.nii'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/transformix.html#Transformix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.transformix.Transformix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python implementation of Transformix with automated image pre-processing.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>in_im: string</dt><dd><p>Input image path.</p>
+</dd>
+<dt>out_dir: string</dt><dd><p>Path to output directory for transform parameters and output results.</p>
+</dd>
+<dt>tps: list (length number of transformation parameter files)</dt><dd><p>Path to elastix image registration transform parameter files (in order of application).</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>target_size: tuple of type integer (sizex,sizey; Default: None)</dt><dd><p>Resize image using bilinear interpolation before exporting.</p>
+</dd>
+<dt>pad: tuple of type integer (padx,pady; Default: None)</dt><dd><p>Indicates height and length padding to add to the image before exporting.</p>
+</dd>
+<dt>trim: tuple of type integer (trimx,trimy; Default: None)</dt><dd><p>Indicates height and length trimming to remove from the image before exporting.</p>
+<dl>
+<dt>crops: dictionary (Default: None)</dt><dd><p>Dictionary of dictionaries containing {crop_name(s): {coords_csv: , target_size: , correction: , tp: , fixed_pad: }}.
+All arguments for each cropped region (i.e., region of interest) are performed
+only on the given crop.</p>
+<blockquote>
+<div><blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>coords_csv: string.</dt><dd><p>Path to csv file containing coordinates.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>target_size: tuple of type integer (sizex,sizey; Default: None)</dt><dd><p>Resize image using bilinear interpolation before exporting.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>correction: integer</dt><dd><p>Extra pixels to take on each side of the crop contour for buffer.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>tp: list (length number of transformation parameter files)</dt><dd><p>Path to elastix image registration transform parameter files
+(in order of application) for this crop.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><dl class="simple">
+<dt>fixed_pad: integer</dt><dd><p>Indicates trim to remove from the cropped image before exporting. This should be the
+same value as the amount of padding applied to
+the cropped region’s corresponding fixed image that was used for
+registration.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="id7">
+<h3>utils<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<span class="target" id="module-hdireg.HDIreg.utils"></span><dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.utils.GetFinalTransformParameters">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.utils.</span></span><span class="sig-name descname"><span class="pre">GetFinalTransformParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/utils.html#GetFinalTransformParameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.utils.GetFinalTransformParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract Transform Parameter files from elastix in order.</p>
+<dl class="simple">
+<dt>dir: string (Default: None, will search in current working directory)</dt><dd><p>Directory to search for files in.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>full_list: list</dt><dd><p>Transform paramter files as pathlib objects in order.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.utils.ParseElastix">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.utils.</span></span><span class="sig-name descname"><span class="pre">ParseElastix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">par</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/utils.html#ParseElastix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.utils.ParseElastix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse an elastix parameter file or elastix.log file and
+extract a number associated with the given string parameter.</p>
+<dl class="simple">
+<dt>input: string</dt><dd><p>Path to input file.</p>
+</dd>
+<dt>par: string</dt><dd><p>String indicating the parameter in the files to extract.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>number: string</dt><dd><p>Orginal string found in the given file. This will be converted to an
+integer or a floating point number.</p>
+</dd>
+<dt>num: integer or float</dt><dd><p>Number corresponding to the parameter specified.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.utils.SearchDir">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.utils.</span></span><span class="sig-name descname"><span class="pre">SearchDir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/utils.html#SearchDir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.utils.SearchDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search only in given directory for files that end with
+the specified suffix.</p>
+<dl class="simple">
+<dt>ending: string (Default: “.txt”)</dt><dd><p>Ending to search for in the given directory</p>
+</dd>
+<dt>dir: string (Default: None, will search in current working directory)</dt><dd><p>Directory to search for files in.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>full_list: list</dt><dd><p>List of pathlib objects for each file found with the given suffix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hdireg.HDIreg.utils.TraverseDir">
+<span class="sig-prename descclassname"><span class="pre">hdireg.HDIreg.utils.</span></span><span class="sig-name descname"><span class="pre">TraverseDir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ending</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.txt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/hdireg/HDIreg/utils.html#TraverseDir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hdireg.HDIreg.utils.TraverseDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Traverse a directory to search for files that end with the
+specified suffix.</p>
+<dl class="simple">
+<dt>ending: string (Default: “.txt”)</dt><dd><p>Ending to search for in the given directory</p>
+</dd>
+<dt>dir: string (Default: None, will search in current working directory)</dt><dd><p>Directory to search for files in.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>full_list: list</dt><dd><p>List of pathlib objects for each file found with the given suffix.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="tissue-state-modeling-patchmap">
+<h2>Tissue State Modeling (PatchMAP)<a class="headerlink" href="#tissue-state-modeling-patchmap" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="patchmap.patchmap_.compute_cobordism">
+<span class="sig-prename descclassname"><span class="pre">patchmap.patchmap_.</span></span><span class="sig-name descname"><span class="pre">compute_cobordism</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_list</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/patchmap/patchmap_.html#compute_cobordism"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#patchmap.patchmap_.compute_cobordism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Patch multiple umap models (simplicial sets) to create a cobordism.</p>
+<dl class="simple">
+<dt>X_list: list of arrays</dt><dd><p>Objects to be passed to umap.fit(). As of now, all of these arrays
+must have the same number of variables.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>stacked: sparse graph</dt><dd><p>Stitched together simplicial set that represents a cobordism.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="patchmap.patchmap_.embed_cobordism">
+<span class="sig-prename descclassname"><span class="pre">patchmap.patchmap_.</span></span><span class="sig-name descname"><span class="pre">embed_cobordism</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patched_simplicial_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/patchmap/patchmap_.html#embed_cobordism"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#patchmap.patchmap_.embed_cobordism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Embed cobordism.</p>
+<dl class="simple">
+<dt>X_list: list of arrays</dt><dd><p>Objects to be passed to umap.fit(). As of now, all of these arrays
+must have the same number of variables.</p>
+</dd>
+<dt>patched_simplicial_set: sparse graph</dt><dd><p>Stitched together simplicial set that represents a cobordism.</p>
+</dd>
+<dt>n_components: integer (Default: 2)</dt><dd><p>Number of embedding components.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>embed: array</dt><dd><p>Embedding array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="cross-system-tissue-information-transfer-i-patchmap">
+<h2>Cross-System/Tissue Information Transfer (i-PatchMAP)<a class="headerlink" href="#cross-system-tissue-information-transfer-i-patchmap" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="patchmap.patchmap_.compute_i_patchmap_cobordism">
+<span class="sig-prename descclassname"><span class="pre">patchmap.patchmap_.</span></span><span class="sig-name descname"><span class="pre">compute_i_patchmap_cobordism</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neighbors</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/patchmap/patchmap_.html#compute_i_patchmap_cobordism"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#patchmap.patchmap_.compute_i_patchmap_cobordism" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create cobordism between reference and query data for information transfer.</p>
+<dl class="simple">
+<dt>dat: array</dt><dd><p>Reference data set.</p>
+</dd>
+<dt>new_dat: array</dt><dd><p>Query data set.</p>
+</dd>
+<dt>random_state: integer</dt><dd><p>Random state to set the seed for reproducibility.</p>
+</dd>
+<dt>n_neighbors: integer</dt><dd><p>Number of neighbors to use for constructing the cobordism.</p>
+</dd>
+<dt>kwargs: key word arguments</dt><dd><p>Passes to UMAP.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>out: sparse graph</dt><dd><p>Output cobordism.</p>
+</dd>
+<dt>lt_ind: tuple</dt><dd><p>Specifies the indices of the reference data set in the resulting cobordism.</p>
+</dd>
+<dt>rt_ind: tuple</dt><dd><p>Specifies the indices of the query data set in the resulting cobordism.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="patchmap.patchmap_.i_patchmap">
+<span class="sig-prename descclassname"><span class="pre">patchmap.patchmap_.</span></span><span class="sig-name descname"><span class="pre">i_patchmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overlay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_dat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neighbors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">all_markov</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/patchmap/patchmap_.html#i_patchmap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#patchmap.patchmap_.i_patchmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>i-PatchMAP workflow for transferring data across cobordism geodesics.</p>
+<dl class="simple">
+<dt>dat: array</dt><dd><p>Reference data set.</p>
+</dd>
+<dt>overlay: array (n_samples,n_features)</dt><dd><p>Array representing reference data that will be interpolated to the query data.</p>
+</dd>
+<dt>new_dat: array</dt><dd><p>Query data set.</p>
+</dd>
+<dt>random_state: integer</dt><dd><p>Random state to set the seed for reproducibility.</p>
+</dd>
+<dt>n_neighbors: integer</dt><dd><p>Number of neighbors to use for constructing the cobordism.</p>
+</dd>
+<dt>prune: float (Default: None)</dt><dd><p>Value in the interval [0-1] that specifies a threshold for edge weights
+in the cobordism. Any values lower than the set threshold will be pruned.</p>
+</dd>
+<dt>all_markov: Bool</dt><dd><p>Compute L1 normalization across all cobordism instead of reference to query data.</p>
+</dd>
+</dl>
+<p>kwargs: key word arguments to pass to UMAP.</p>
+<dl class="simple">
+<dt>projections: sparse array</dt><dd><p>Interpolated measures in the query data set from the reference overlay data.</p>
+</dd>
+<dt>rt: sparse graph</dt><dd><p>L1 normalized graph used to transfer data from reference to query data.</p>
+</dd>
+<dt>out: sparse graph</dt><dd><p>Output cobordism.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="background.html" class="btn btn-neutral float-right" title="Background" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="jupyter.html" class="btn btn-neutral float-left" title="Jupyter Notebook Zoo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Joshua Hess.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

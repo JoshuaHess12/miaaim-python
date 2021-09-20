@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>hdireg.HDIreg.elastix &mdash; miaaim 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: 5DADE2" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> miaaim
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Nextflow User Guide / Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#linux-os-x">Linux / OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installing-miaaim-in-python">Installing MIAAIM in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../quick_start.html#prototype-001">prototype-001</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#download-data">Download Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#image-preprocessing">Image Preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#image-registration">Image Registration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../directory.html">Folder Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#input">input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#hdiprep">hdiprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#hdireg">hdireg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#docs">docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workflows.html">Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#yaml-parameter-file-input-basics">YAML Parameter File Input Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#high-parameter-image-processing">High-Parameter Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#histological-image-processing">Histological Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#hdiprep-implementation-guide">HDIprep Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#hdireg-implementation-guide">HDIreg Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#tissue-state-modelling-patchmap">Tissue State Modelling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parameters.html">Parameter Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#nextflow">Nextflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#hdiprep">HDIprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#hdireg">HDIreg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#docker-singularity-containers">Docker/Singularity Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#resource-allocation">Resource Allocation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration.html#memory">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration.html#cpu">CPU</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#preset-resource-allocation-options">Preset Resource Allocation Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../provenance.html">Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#adding-imaging-modalities">Adding Imaging Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#importing-new-modalities-adding-file-formats">Importing New Modalities / Adding File Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MIAAIM in Python</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../python.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#usage-without-docker-install-with-pip">Usage without Docker / Install with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#reproducibility-with-pip">Reproducibility with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#docker">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#hdi-utility-functions-hdi-utils">HDI Utility Functions (hdi-utils)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python-workflows.html">Workflow Implementations in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#steady-state-umap-compression">Steady-state UMAP compression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#histological-image-processing">Histological Image Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#elastix">elastix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#transformix">transformix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#tissue-state-modeling-patchmap">Tissue State Modeling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jupyter.html">Jupyter Notebook Zoo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#image-registration-hdireg">Image Registration (HDIreg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#id1">Image Registration (HDIreg)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdiprep.HDIprep.hdi_prep">hdi_prep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdiprep.HDIprep.utils">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdireg.HDIreg.elastix">elastix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdireg.HDIreg.transformix">transformix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#id7">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#tissue-state-modeling-patchmap">Tissue State Modeling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Background on MIAAIM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elastix.html">Elastix Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../elastix.html#registration-parameter-files-elastix">Registration Parameter Files (Elastix)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#multi-channel-input">Multi-channel Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#single-channel-input">Single-channel Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#help-the-registration-with-manual-landmarks">Help the Registration with Manual Landmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#outputs">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../elastix.html#applying-transformations-transformix">Applying Transformations (Transformix)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Roadmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">MIAAIM Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../roadmap.html#miaaim-0-0-1">MIAAIM 0.0.1</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#adding-imaging-modalities">Adding Imaging Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#importing-new-modalities-adding-file-formats">Importing New Modalities / Adding File Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">FAQs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs.html">FAQs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contact</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact Information</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Funding</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding.html">Funding</a></li>
+</ul>
+<p class="caption"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acknowledgements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">miaaim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>hdireg.HDIreg.elastix</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for hdireg.HDIreg.elastix</h1><div class="highlight"><pre>
+<span></span><span class="c1">#Image registration using elastix</span>
+<span class="c1">#Joshua Hess</span>
+
+<span class="c1">#Import modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+
+
+<span class="c1">#Add main elastix component</span>
+<div class="viewcode-block" id="RunElastix"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.elastix.RunElastix">[docs]</a><span class="k">def</span> <span class="nf">RunElastix</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Run the elastix registration. You must be able to call elastix</span>
+<span class="sd">	from your command shell to use this. You must also have your parameter</span>
+<span class="sd">	text files set before running (see elastix parameter files).</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	command: string</span>
+<span class="sd">		Sent to the system for elastix running (see elastix command line implementation).</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="c1">#Print command</span>
+	<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">command</span><span class="p">))</span>
+	<span class="c1">#Print elastix update</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Running elastix...&#39;</span><span class="p">)</span>
+	<span class="c1">#Start timer</span>
+	<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+	<span class="c1">#Send the command to the shell</span>
+	<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+	<span class="c1">#Stop timer</span>
+	<span class="n">stop</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+	<span class="c1">#Print update</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Finished -- computation took &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">stop</span><span class="o">-</span><span class="n">start</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;sec.&#39;</span><span class="p">)</span>
+	<span class="c1">#Return values</span>
+	<span class="k">return</span> <span class="n">command</span></div>
+
+
+
+<span class="c1">#Define elastix class structure</span>
+<div class="viewcode-block" id="Elastix"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.elastix.Elastix">[docs]</a><span class="k">class</span> <span class="nc">Elastix</span><span class="p">():</span>
+	<span class="sd">&quot;&quot;&quot;Elastix image registration class.</span>
+
+<span class="sd">	Parameters</span>
+<span class="sd">	----------</span>
+<span class="sd">	fixed: string</span>
+<span class="sd">		Path to fixed (reference) image.</span>
+
+<span class="sd">	moving: string</span>
+<span class="sd">		Path to moving image (image to be transformed).</span>
+
+<span class="sd">	out_dir: string</span>
+<span class="sd">		Path to output directory.</span>
+
+<span class="sd">	p: list (length number of registration parameter files)</span>
+<span class="sd">		Path to elastix image registration parameter files (in order of application).</span>
+
+<span class="sd">	fp: string (*.txt)</span>
+<span class="sd">		Path to fixed image landmark points for manual guidance registration.</span>
+
+<span class="sd">	mp: string (*.txt)</span>
+<span class="sd">		Path to moving image landmark points for manual guidance registration.</span>
+
+<span class="sd">	fMask: string (*.nii)</span>
+<span class="sd">		Path to fixed image mask that defines region on image to draw samples</span>
+<span class="sd">		from during registration.</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">fixed</span><span class="p">,</span><span class="n">moving</span><span class="p">,</span><span class="n">out_dir</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">fp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">mp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">fMask</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+
+		<span class="c1">#Create pathlib objects and set class parameters</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">fixed</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">fixed</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">fixed_channels</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">moving_channels</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">multichannel</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">moving</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">moving</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">temp_dir</span> <span class="o">=</span> <span class="kc">None</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="n">Path</span><span class="p">(</span><span class="n">par_file</span><span class="p">)</span> <span class="k">for</span> <span class="n">par_file</span> <span class="ow">in</span> <span class="n">p</span><span class="p">]</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">fp</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">fp</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">Path</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">mp</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">mp</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">Path</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">fMask</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="n">fMask</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">Path</span><span class="p">(</span><span class="n">fMask</span><span class="p">)</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;elastix&quot;</span>
+
+		<span class="c1">#Load the images to check for dimension number</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loading images...&#39;</span><span class="p">)</span>
+	    <span class="c1">#Load images</span>
+		<span class="n">niiFixed</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fixed</span><span class="p">))</span>
+		<span class="n">niiMoving</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">moving</span><span class="p">))</span>
+		<span class="c1">#Print update</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done loading&#39;</span><span class="p">)</span>
+
+	    <span class="c1">#Add the parameter files</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot; -p &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">par_file</span><span class="p">])</span> <span class="k">for</span> <span class="n">par_file</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="p">))])</span>
+
+	    <span class="c1">#Check for corresponding points in registration (must have fixed and moving set both)</span>
+		<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fp</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">mp</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="c1">#Add to the command</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span><span class="s2">&quot; -fp &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fp</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; -mp &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mp</span><span class="p">)</span>
+
+	    <span class="c1">#Check for fixed mask</span>
+		<span class="k">if</span> <span class="n">fMask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="c1">#Add the fixed mask to the command if it exists</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span><span class="s2">&quot; -fMask &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">fMask</span><span class="p">)</span>
+
+	    <span class="c1">#Add the output directory to the command</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span><span class="s2">&quot; -out &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">)</span>
+
+	    <span class="c1">#Check to see if there is single channel input (grayscale)</span>
+		<span class="k">if</span> <span class="n">niiFixed</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">niiMoving</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Detected single channel input images...&#39;</span><span class="p">)</span>
+	        <span class="c1">#Add fixed and moving image to the command string</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="o">+</span><span class="s2">&quot; -f &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fixed</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot; -m &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">moving</span><span class="p">)</span>
+			<span class="c1">#Update the fixed channels</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">fixed_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fixed</span><span class="p">)</span>
+			<span class="c1">#Update the moving channels</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">moving_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">moving</span><span class="p">)</span>
+			<span class="c1">#Update whether this is a multichannel input or not</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">multichannel</span> <span class="o">=</span> <span class="kc">False</span>
+
+			<span class="c1">#Run elastix without creating temporary directory</span>
+			<span class="n">RunElastix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">)</span>
+
+	    <span class="c1">#Check to see if there is multichannel input</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="c1">#create a temporary directory using the context manager for channel-wise images</span>
+			<span class="k">with</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">TemporaryDirectory</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dir</span><span class="p">)</span> <span class="k">as</span> <span class="n">tmpdirname</span><span class="p">:</span>
+				<span class="c1">#Print update</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Created temporary directory&#39;</span><span class="p">,</span> <span class="n">tmpdirname</span><span class="p">)</span>
+				<span class="c1">#Print update</span>
+				<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Exporting single channel images for multichannel input...&#39;</span><span class="p">)</span>
+		        <span class="c1">#Read the images</span>
+				<span class="n">niiFixed</span> <span class="o">=</span> <span class="n">niiFixed</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+				<span class="n">niiMoving</span> <span class="o">=</span> <span class="n">niiMoving</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+				<span class="c1">#Update multichannel class option</span>
+				<span class="bp">self</span><span class="o">.</span><span class="n">multichannel</span> <span class="o">=</span> <span class="kc">True</span>
+
+				<span class="c1">#Export single channel images for each channel of fixed image</span>
+				<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">niiFixed</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+					<span class="c1">#Create a filename</span>
+					<span class="n">fname</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fixed</span><span class="o">.</span><span class="n">stem</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">fixed</span><span class="o">.</span><span class="n">suffix</span><span class="p">)))</span>
+					<span class="c1">#Update the list of names for fixed image</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">fixed_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+					<span class="c1">#Update the list of names for fixed image</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -f&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+					<span class="c1">#Check to see if the path exists</span>
+					<span class="k">if</span> <span class="ow">not</span> <span class="n">fname</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+						<span class="c1">#Create a nifti image</span>
+						<span class="n">nii_im</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">Nifti1Image</span><span class="p">(</span><span class="n">niiFixed</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">affine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+						<span class="c1">#Save the nifti image</span>
+						<span class="n">nib</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nii_im</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">fname</span><span class="p">))</span>
+
+				<span class="c1">#Remove the fixed image from memory</span>
+				<span class="n">niiFixed</span> <span class="o">=</span> <span class="kc">None</span>
+
+				<span class="c1">#Export single channel images for each channel of fixed image</span>
+				<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">niiMoving</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+					<span class="c1">#Create a filename</span>
+					<span class="n">mname</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmpdirname</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">moving</span><span class="o">.</span><span class="n">stem</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">moving</span><span class="o">.</span><span class="n">suffix</span><span class="p">)))</span>
+					<span class="c1">#Update the list of names for moving image</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">moving_channels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mname</span><span class="p">)</span>
+					<span class="c1">#Update the list of names for moving image</span>
+					<span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">command</span> <span class="o">+</span> <span class="s1">&#39; -m&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mname</span><span class="p">)</span>
+					<span class="c1">#Check to see if the path exists</span>
+					<span class="k">if</span> <span class="ow">not</span> <span class="n">mname</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+						<span class="c1">#Create a nifti image</span>
+						<span class="n">nii_im</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">Nifti1Image</span><span class="p">(</span><span class="n">niiMoving</span><span class="p">[:,:,</span><span class="n">i</span><span class="p">],</span> <span class="n">affine</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+						<span class="c1">#Save the nifti image</span>
+						<span class="n">nib</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">nii_im</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">mname</span><span class="p">))</span>
+
+				<span class="c1">#Remove the moving image from memory</span>
+				<span class="n">niiMoving</span> <span class="o">=</span> <span class="kc">None</span>
+				<span class="c1">#Run the command using the function created</span>
+				<span class="n">RunElastix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">command</span><span class="p">)</span></div>
+
+		<span class="c1">#Return the command itself</span>
+		<span class="c1">#return self.command</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Joshua Hess.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

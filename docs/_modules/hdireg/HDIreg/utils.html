@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>hdireg.HDIreg.utils &mdash; miaaim 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: 5DADE2" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> miaaim
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Nextflow User Guide / Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#linux-os-x">Linux / OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#windows">Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#installing-miaaim-in-python">Installing MIAAIM in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quick_start.html">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../quick_start.html#prototype-001">prototype-001</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#download-data">Download Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#image-preprocessing">Image Preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../quick_start.html#image-registration">Image Registration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../directory.html">Folder Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#input">input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#hdiprep">hdiprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#hdireg">hdireg</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../directory.html#docs">docs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../workflows.html">Workflows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#yaml-parameter-file-input-basics">YAML Parameter File Input Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#high-parameter-image-processing">High-Parameter Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#histological-image-processing">Histological Image Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#hdiprep-implementation-guide">HDIprep Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../workflows.html#hdireg-implementation-guide">HDIreg Implementation Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#tissue-state-modelling-patchmap">Tissue State Modelling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../workflows.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parameters.html">Parameter Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#nextflow">Nextflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#hdiprep">HDIprep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../parameters.html#hdireg">HDIreg</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../configuration.html">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#docker-singularity-containers">Docker/Singularity Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#resource-allocation">Resource Allocation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration.html#memory">Memory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration.html#cpu">CPU</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../configuration.html#preset-resource-allocation-options">Preset Resource Allocation Options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../provenance.html">Provenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#adding-imaging-modalities">Adding Imaging Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#importing-new-modalities-adding-file-formats">Importing New Modalities / Adding File Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">MIAAIM in Python</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../python.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#usage-without-docker-install-with-pip">Usage without Docker / Install with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#reproducibility-with-pip">Reproducibility with Pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#docker">Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python.html#hdi-utility-functions-hdi-utils">HDI Utility Functions (hdi-utils)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../python-workflows.html">Workflow Implementations in Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#steady-state-umap-compression">Steady-state UMAP compression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#histological-image-processing">Histological Image Processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#elastix">elastix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../python-workflows.html#transformix">transformix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#tissue-state-modeling-patchmap">Tissue State Modeling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../python-workflows.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../jupyter.html">Jupyter Notebook Zoo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#image-registration-hdireg">Image Registration (HDIreg)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../jupyter.html#id1">Image Registration (HDIreg)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#image-preparation-hdiprep">Image Preparation (HDIprep)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdiprep.HDIprep.hdi_prep">hdi_prep</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdiprep.HDIprep.utils">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#image-registration-hdireg">Image Registration (HDIreg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdireg.HDIreg.elastix">elastix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#module-hdireg.HDIreg.transformix">transformix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#id7">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#tissue-state-modeling-patchmap">Tissue State Modeling (PatchMAP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#cross-system-tissue-information-transfer-i-patchmap">Cross-System/Tissue Information Transfer (i-PatchMAP)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Background on MIAAIM</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../elastix.html">Elastix Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../elastix.html#registration-parameter-files-elastix">Registration Parameter Files (Elastix)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#multi-channel-input">Multi-channel Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#single-channel-input">Single-channel Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#help-the-registration-with-manual-landmarks">Help the Registration with Manual Landmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../elastix.html#outputs">Outputs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../elastix.html#applying-transformations-transformix">Applying Transformations (Transformix)</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Roadmap</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">MIAAIM Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../roadmap.html#miaaim-0-0-1">MIAAIM 0.0.1</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#adding-imaging-modalities">Adding Imaging Modalities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../contributing.html#importing-new-modalities-adding-file-formats">Importing New Modalities / Adding File Formats</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">FAQs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../faqs.html">FAQs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contact</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact Information</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Funding</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../funding.html">Funding</a></li>
+</ul>
+<p class="caption"><span class="caption-text">License</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">License</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Acknowledgements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../acknowledgements.html">Acknowledgements</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">miaaim</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>hdireg.HDIreg.utils</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for hdireg.HDIreg.utils</h1><div class="highlight"><pre>
+<span></span><span class="c1">#Functions for general purpose usage</span>
+<span class="c1">#Joshua Hess</span>
+
+<span class="c1"># Import modules</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+
+
+<div class="viewcode-block" id="SearchDir"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.utils.SearchDir">[docs]</a><span class="k">def</span> <span class="nf">SearchDir</span><span class="p">(</span><span class="n">ending</span> <span class="o">=</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span><span class="nb">dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Search only in given directory for files that end with</span>
+<span class="sd">    the specified suffix.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ending: string (Default: &quot;.txt&quot;)</span>
+<span class="sd">        Ending to search for in the given directory</span>
+
+<span class="sd">    dir: string (Default: None, will search in current working directory)</span>
+<span class="sd">        Directory to search for files in.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    full_list: list</span>
+<span class="sd">        List of pathlib objects for each file found with the given suffix.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#If directory is not specified, use the working directory</span>
+    <span class="k">if</span> <span class="nb">dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span>
+        <span class="nb">dir</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+    <span class="c1">#Search the directory only for files</span>
+    <span class="n">full_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="nb">dir</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ending</span><span class="p">):</span>
+            <span class="n">full_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span><span class="n">file</span><span class="p">)))</span>
+    <span class="c1">#Return the list</span>
+    <span class="k">return</span> <span class="n">full_list</span></div>
+
+
+<div class="viewcode-block" id="TraverseDir"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.utils.TraverseDir">[docs]</a><span class="k">def</span> <span class="nf">TraverseDir</span><span class="p">(</span><span class="n">ending</span><span class="o">=</span><span class="s2">&quot;.txt&quot;</span><span class="p">,</span><span class="nb">dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Traverse a directory to search for files that end with the</span>
+<span class="sd">    specified suffix.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ending: string (Default: &quot;.txt&quot;)</span>
+<span class="sd">        Ending to search for in the given directory</span>
+
+<span class="sd">    dir: string (Default: None, will search in current working directory)</span>
+<span class="sd">        Directory to search for files in.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    full_list: list</span>
+<span class="sd">        List of pathlib objects for each file found with the given suffix.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#If directory is not specified, use the working directory</span>
+    <span class="k">if</span> <span class="nb">dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span>
+        <span class="nb">dir</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+    <span class="c1">#Traverse the directory to search for files</span>
+    <span class="n">full_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="nb">dir</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">ending</span><span class="p">):</span>
+                <span class="n">full_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">f</span><span class="p">)))</span>
+    <span class="c1">#Return the list</span>
+    <span class="k">return</span> <span class="n">full_list</span></div>
+
+
+
+<div class="viewcode-block" id="GetFinalTransformParameters"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.utils.GetFinalTransformParameters">[docs]</a><span class="k">def</span> <span class="nf">GetFinalTransformParameters</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Extract Transform Parameter files from elastix in order.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    dir: string (Default: None, will search in current working directory)</span>
+<span class="sd">        Directory to search for files in.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    full_list: list</span>
+<span class="sd">        Transform paramter files as pathlib objects in order.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#If directory is not specified, use the working directory</span>
+    <span class="k">if</span> <span class="nb">dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">)</span>
+        <span class="nb">dir</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+
+    <span class="c1">#Search the directory only for files</span>
+    <span class="n">full_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="nb">dir</span><span class="p">):</span>
+        <span class="k">if</span> <span class="s2">&quot;TransformParameters&quot;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">full_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">dir</span><span class="p">,</span><span class="n">file</span><span class="p">)))</span>
+    <span class="c1">#Order the list to get the last transform parameter file</span>
+    <span class="n">full_list</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;TransformParameters.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="c1">#Return the list</span>
+    <span class="k">return</span> <span class="n">full_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">full_list</span></div>
+
+
+
+<div class="viewcode-block" id="ParseElastix"><a class="viewcode-back" href="../../../api.html#hdireg.HDIreg.utils.ParseElastix">[docs]</a><span class="k">def</span> <span class="nf">ParseElastix</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="n">par</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Parse an elastix parameter file or elastix.log file and</span>
+<span class="sd">    extract a number associated with the given string parameter.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input: string</span>
+<span class="sd">        Path to input file.</span>
+
+<span class="sd">    par: string</span>
+<span class="sd">        String indicating the parameter in the files to extract.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    number: string</span>
+<span class="sd">        Orginal string found in the given file. This will be converted to an</span>
+<span class="sd">        integer or a floating point number.</span>
+
+<span class="sd">    num: integer or float</span>
+<span class="sd">        Number corresponding to the parameter specified.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#Read the transform parameters</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">filedata</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="c1">#Add each line to a list with separation</span>
+    <span class="n">result</span><span class="o">=</span><span class="p">[]</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">filedata</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1">#Find the parameter (Add a space for a match)</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">result</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">par</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">s</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[-+]?\d*\.\d+|\d+&quot;</span><span class="p">,</span> <span class="n">lines</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1">#Try to convert to integer, otherwise convert to float</span>
+    <span class="k">if</span> <span class="n">number</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="c1">#Return the number</span>
+    <span class="k">return</span> <span class="n">number</span><span class="p">,</span> <span class="n">num</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Joshua Hess.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
