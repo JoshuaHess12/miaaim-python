@@ -95,9 +95,6 @@ our configuration settings within your project!
    * - Flag
      - Memory
      - CPUs
-   * - standard
-     -
-     -
    * - medium
      - 40GB
      -
