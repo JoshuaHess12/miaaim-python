@@ -10,6 +10,12 @@ reproducibility, or you can install the package into your environment with pip.
 ### Dependencies
 MIAAIM utilizes the [Elastix](https://elastix.lumc.nl) library for image registration computations, which is written in the C++ language. For this reason, we recommend running your workflows with the MIAAIM Python package inside of a Docker container, which we have created to automatically include Elastix. You can still run MIAAIM, however, if you would rather stick with installing packages via pip, you will just need to install Elastix separately. These two options for installing MIAAIM are outlined below:
 
+### Cloning the repository:
+To clone the repository directly, use the following command to ensure that all submodules are included:
+```bash
+git clone https://github.com/JoshuaHess12/miaaim-python.git --recurse-submodules
+ ```
+
 ### Usage without Docker / Install with Pip:
 If you are unable to use Docker on your machine, then you can still use MIAAIM:
 1. [download](https://github.com/SuperElastix/elastix/releases/tag/5.0.1) the latest version of Elastix.
