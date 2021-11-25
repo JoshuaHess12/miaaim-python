@@ -14,7 +14,7 @@ def readme():
 configuration = {
     "name": "miaaim-python",
     "version": "0.0.1",
-    "description": "Multi-modal Image Alignment and Analysis by Information Manifolds",
+    "description": "Multi-omics Image Alignment and Analysis by Information Manifolds",
     "long_description": readme(),
     "long_description_content_type": "text/markdown",
     "classifiers": [
